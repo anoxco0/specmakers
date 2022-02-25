@@ -290,9 +290,38 @@
 </body>
 </html>
 <script>
-    function user(e){
-        const email = document.getElementById('Log_email').value;
-        const password = document.getElementById('Log_password').value;
-        
+
+    async function user(){
+        try{
+            let data={
+                email:document.getElementById("Log_email").value,
+                password:document.getElementById("Log_password").value
+           }
+
+           console.log(data);
+       let url = `http://localhost:8252/login`
+       const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
     }
+    console.log(data);
+       let response = await fetch(url)
+       console.log(response)
+       let datas = await response.json();
+       console.log(datas);
+
+    //    if(data.error==true){
+    //        alert('regidtration failed')
+    //    }
+    //    else{
+    //        alert('registration successfull')
+    //    }
+        }catch(e){
+            console.log(e)
+        }
+
+     }
  </script>
