@@ -245,9 +245,9 @@
     
     <form onsubmit="onSubmitHandler()" id="sign">
         <h1>Sign In</h1>
-       <input type="email" name="email" placeholder="Email address"  iid="Log_email">
+       <input type="email" name="email"  placeholder="Email address"  id="Log_email">
        <input type="password" name="password" placeholder="Password"  id="Log_password">
-       <input id="button" type="submit" value="Continue" name="submit" onclick="user()">
+       <input id="button" type="submit" name="submit" onclick="user()">
     </form>
     <!-- -----------------------sign in last----------- -->
 
@@ -289,5 +289,9 @@
 </body>
 </html>
 <script>
-
+    function onSubmitHandler(e){
+        e.preventDefault();
+        const email = document.getElementById('Log_email').value;
+        console.log("email");
+    }
  </script>
