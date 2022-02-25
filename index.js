@@ -49,7 +49,7 @@ app.post('/login', login)
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-app.get('/', (req, res) => res.render('pages/index.js'))
+app.get('/', (req, res) => res.render('pages/index'))
 
 const port = process.env.PORT || 8252
 
