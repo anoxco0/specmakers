@@ -8,16 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0015/2879/1092/files/fav_32x32_f3e96a89-85b4-4e5e-a7ff-90579a2ccc59_32x32.png?v=1583832747" type="image/png">
     <title>Eyeglass Frames, Computer Glasses, Contact Lenses, Sunglasses Online | – Specsmakers Opticians PVT. LTD.</title>
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footbar.css">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/css/index.css">
-    <script>
-      require('/public/js/users')
+    <link rel="stylesheet" href="./components/navbar.css">
+    <link rel="stylesheet" href="./components/footbar.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <script type="module">
+      import navbar from './components/navbar.js'
       document.getElementById("this_nav").innerHTML=navbar();
-
  
-      import footbar from '../components/footbar.js'
+      import footbar from './components/footbar.js'
       document.getElementById('foot').innerHTML=footbar();
      </script>
      <link rel="stylesheet" href="./inspect_prevent/select.prevent.css">
@@ -25,16 +23,11 @@
         import fun from './inspect_prevent/prevent_ctr_comb.js'
         document.onkeydown=fun;
     </script>
-=======
-    <link rel="stylesheet" href="/public/css/index.css">
-    
->>>>>>> b286bb4d737ff67d47355bf0680123f526343eab
 </head>
-
 <body oncontextmenu="return false" oncopy="return false">
 
 
-  <%- include ("../partials/navbar.ejs") %>
+  <div id="this_nav"></div>
 
 
   <!-- @media min-width 767px -->
@@ -352,22 +345,15 @@
  
 
 
-  <%- include ('../partials/footbar.ejs')%>
+  <div id="foot"></div>
+
+<!-- <%console.log(locals.username, locals.type)%>
+  <% if (locals.username) { %>
+     <% localSt(username, type) %>
+<% } %> -->
 </body>
 </html>
-<script type="module">
-  import navbar from '/public/js/users/navbar.js'
-  console.log(navbar);
-  document.getElementById("this_nav").innerHTML=navbar();
 
-  import footbar from './components/footbar.js'
-  document.getElementById('foot').innerHTML=footbar();
- </script>
- <link rel="stylesheet" href="./inspect_prevent/select.prevent.css">
- <script language="JavaScript" type="module">
-    import fun from './inspect_prevent/prevent_ctr_comb.js'
-    document.onkeydown=fun;
-</script>
 
 <script type="module">
   
