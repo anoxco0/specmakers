@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footbar.css">
     <link rel="stylesheet" href="/css/index.css">
-    <script type="module">
-      import navbar from '/public/js/navbar.js'
+    <script>
+      require('/public/js/users')
       document.getElementById("this_nav").innerHTML=navbar();
+
  
       import footbar from './components/footbar.js'
       document.getElementById('foot').innerHTML=footbar();
@@ -348,10 +349,14 @@
 
   <div id="foot"></div>
 
-<!-- <%console.log(locals.username, locals.type)%>
-  <% if (locals.username) { %>
-     <% localSt(username, type) %>
-<% } %> -->
+  <% if (locals.username || locals.type) { 
+    const obj = {
+      "username":username,
+      "type":type
+    }
+    %>
+     <%= localStorage.setItem('login', JSON.Stringify(obj)) %>
+<% } %>
 </body>
 </html>
 
@@ -433,8 +438,8 @@
    
     setTimeout(showSlides, 3000); 
     }
-    function localSt(username, type){
-      console.log(username, type)
-    }
+    // function localSt(user, type){
+    //   console.log(user, type)
+    // }
 </script>
 <script src="./components/navbar-2.js"></script>
