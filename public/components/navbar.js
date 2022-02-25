@@ -162,8 +162,8 @@ function navbar (){
                   <div><input id="password" type="password" placeholder="*****"></div>
                   <div><button onclick="loginPage()">Login</button></div>
                   <div id="log2">
-                      <div>New Customer? <a href="/public/account/login.html">CREATE YOUR ACCOUNT</a></div>
-                      <div>Lost password? <a href="/public/account/login.html">RECOVER PASSWORD</a></div>
+                      <div>New Customer? <a href="/account/login.html">CREATE YOUR ACCOUNT</a></div>
+                      <div>Lost password? <a href="/account/login.html">RECOVER PASSWORD</a></div>
                   </div>
               </div>
               <div id="logintrue">
