@@ -18,13 +18,13 @@
 
     <!-- ------------------sign up ------------------------ -->
  <div id="loginmain">
-    <form action="http://localhost:8252/register" method="post" onsubmit="onSubmitHandler" id="sign">
+    <div id="sign">
         <h1>Nice To Meet You</h1>
        <input type="text" name="full_name" placeholder="Full Name" id="name">
        <input type="email" name="email" placeholder="Email address"  id="email">
        <input type="password" name="password" placeholder="Password"  id="password">
-       <input id="button" type="submit" value="Continue" name="submit" onclick="user()">
-    </form>
+       <button id="button" onclick="register()" >Continue</button>
+    </div>
       </form>
     <!-- -----------------------sign up last----------- -->
 
@@ -64,30 +64,42 @@
 
 </body>
 <script>
-     let user_cred=JSON.parse(localStorage.getItem("User"))||[];
+    //  let user_cred=JSON.parse(localStorage.getItem("User"))||[];
      
-     function User(){
-        let user_credientials={
-            name:document.getElementById("name").value,
-            email:document.getElementById("email").value,
-            password:document.getElementById("password").value,
+    async function register(){
+        try{
+            let data={
+                full_name:document.getElementById("name").value,
+                email:document.getElementById("email").value,
+                password:document.getElementById("password").value
+           }
+
+           console.log(data);
+       let url = 'http://localhost:8252/register'
+       const config = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    }
+    console.log(data);
+       let response = await fetch(url, config)
+       console.log(response)
+       let datas = await response.json();
+       console.log(datas);
+
+    //    if(data.error==true){
+    //        alert('regidtration failed')
+    //    }
+    //    else{
+    //        alert('registration successfull')
+    //    }
+        }catch(e){
+            console.log(e)
         }
-        let count=0;
-        for (var i in user_credientials) {
-          if(user_credientials[i].length!=0){
-             count++; 
-          }
-        }
-        if(count>2){
-        user_cred.push(user_credientials);
-        localStorage.setItem("User",JSON.stringify(user_cred));
-        console.log(user_cred);
-        alert("Registration Successful")
-          window.location.href="login.html";
-        }
-        else{
-            alert("invalid credientials")
-        }
+
      }
      
 </script>

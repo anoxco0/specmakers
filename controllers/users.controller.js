@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', async(req, res)=>{
     try{
         const user = await User.find().lean().exec();
-        return res.render(`users${req.baseUrl}.ejs`,{user});
+        return res.send(user);
     } catch(e){
         return res.status(500).send({message:e.message});
     }

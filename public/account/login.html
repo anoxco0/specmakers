@@ -238,17 +238,18 @@
 </head>
 
 
-<body oncontextmenu="return false", oncopy="return false">
+<body oncopy="return false">
     <a href="../index.html"><img  src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/sm_payu_3401b18c-164d-49e8-8ed1-1927a3a2f24e_large.png?v=1612361697" alt="" id="img"></a>
       <!-- ------------------sign in ------------------------ -->
 <div id="loginmain">
     
-    <form onsubmit="onSubmitHandler()" id="sign">
+    <div id="sign">
         <h1>Sign In</h1>
-       <input type="email" name="email"  placeholder="Email address"  id="Log_email">
+       <input type="email" name="email"  placeholder="Email address" value="" id="Log_email">
        <input type="password" name="password" placeholder="Password"  id="Log_password">
-       <input id="button" type="submit" name="submit" onclick="user()">
-    </form>
+       <button id="button"  onclick="user()">Continue</button>
+
+    </div>
     <!-- -----------------------sign in last----------- -->
 
 
@@ -289,9 +290,9 @@
 </body>
 </html>
 <script>
-    function onSubmitHandler(e){
-        e.preventDefault();
+    function user(e){
         const email = document.getElementById('Log_email').value;
-        console.log("email");
+        const password = document.getElementById('Log_password').value;
+        
     }
  </script>

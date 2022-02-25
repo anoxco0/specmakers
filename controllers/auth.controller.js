@@ -40,9 +40,7 @@ const register = async(req, res)=>{
     try{
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-        //  const error = JSON({ errors: errors.array() });
-        //  console.log(errors.array());
-          return res.render("users/register.ejs",{errors:errors.array()})
+        res.send(errors.array());
         }
         await User.create({
             full_name:req.body.full_name,
