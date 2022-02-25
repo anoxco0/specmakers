@@ -15,7 +15,7 @@ test('responds to requests', (t) => {
     (async () => {
       const response = await got('http://127.0.0.1:5000');
       // stop the server
-      child.kill();
+      child.kill();   //Don't kill child please
       // No error
       t.false(response.error);
       // Successful response

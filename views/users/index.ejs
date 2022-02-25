@@ -10,6 +10,7 @@
     <title>Eyeglass Frames, Computer Glasses, Contact Lenses, Sunglasses Online | – Specsmakers Opticians PVT. LTD.</title>
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footbar.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/index.css">
     <script>
       require('/public/js/users')
@@ -24,12 +25,16 @@
         import fun from './inspect_prevent/prevent_ctr_comb.js'
         document.onkeydown=fun;
     </script>
+=======
+    <link rel="stylesheet" href="/public/css/index.css">
+    
+>>>>>>> b286bb4d737ff67d47355bf0680123f526343eab
 </head>
 
 <body oncontextmenu="return false" oncopy="return false">
 
 
-  <div id="this_nav"></div>
+  <%- include ("../partials/navbar.ejs") %>
 
 
   <!-- @media min-width 767px -->
@@ -347,19 +352,22 @@
  
 
 
-  <div id="foot"></div>
-
-  <% if (locals.username || locals.type) { 
-    const obj = {
-      "username":username,
-      "type":type
-    }
-    %>
-     <%= localStorage.setItem('login', JSON.Stringify(obj)) %>
-<% } %>
+  <%- include ('../partials/footbar.ejs')%>
 </body>
 </html>
+<script type="module">
+  import navbar from '/public/js/users/navbar.js'
+  console.log(navbar);
+  document.getElementById("this_nav").innerHTML=navbar();
 
+  import footbar from './components/footbar.js'
+  document.getElementById('foot').innerHTML=footbar();
+ </script>
+ <link rel="stylesheet" href="./inspect_prevent/select.prevent.css">
+ <script language="JavaScript" type="module">
+    import fun from './inspect_prevent/prevent_ctr_comb.js'
+    document.onkeydown=fun;
+</script>
 
 <script type="module">
   
@@ -438,8 +446,8 @@
    
     setTimeout(showSlides, 3000); 
     }
-    // function localSt(user, type){
-    //   console.log(user, type)
-    // }
+    function localSt(username, type){
+      console.log(username, type)
+    }
 </script>
 <script src="./components/navbar-2.js"></script>
