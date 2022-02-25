@@ -87,7 +87,7 @@ function navbar (){
       <div  id="nolog" class="flex jusspacebet">
           <div class="flex jusspacebet">
               <div id="formar" class="flex">
-              <div><a id="black" href="/publi/account/login.html">LOGIN</a></div>
+              <div><a id="black" href="/account/login.html">LOGIN</a></div>
               <div><a id="black" href="/account/login.html">REGISTER</a></div>
               </div>
               <div id="formar2"><a id="black" href="./account/login.html"><i class="far marl5p fa-user-circle"></i></a></div>
