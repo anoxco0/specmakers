@@ -17,7 +17,7 @@ function compGlass(){
     computerglass.style.display="block";
     document.getElementById("compglass").style.borderImage="linear-gradient(to right,rgb(218, 204, 8), red, blue, cyan) 10";
     
-    window.onmouseover=function(event){
+    window.onmouseover=function(){
         if(event.target==computerglass){
             computerglass.style.display="none";
         }

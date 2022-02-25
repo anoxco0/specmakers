@@ -1,4 +1,5 @@
- <div id="foot1">
+function footbar(){
+    return ` <div id="foot1">
     <div>
       <div>ONLINE SHOPPING</div>
       <div>Men's Glasses</div>
@@ -92,4 +93,6 @@
       <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3ZibORipzUrSeRAl2ssXkP3toHSSQfs53nxi_wHA29U7sfZB4oKjeIiIr5RrRrp3hQ3Q&usqp=CAU" alt=""></div>
     </div>
   </div>
-  <div id="foot3">Copyright © 2021, All Rights Reserved</div>
+  <div id="foot3">Copyright © 2021, All Rights Reserved</div>`
+}
+export default footbar
