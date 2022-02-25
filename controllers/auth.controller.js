@@ -40,7 +40,9 @@ const register = async(req, res)=>{
     try{
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-        res.send(errors.array());
+            console.log(errors.array());
+        return res.send(errors.array());
+        
         }
         await User.create({
             full_name:req.body.full_name,
@@ -50,6 +52,7 @@ const register = async(req, res)=>{
         })
         const user = await User.findOne({email:req.body.email}).lean().exec();
         const token = newToken(user) 
+        console.log(user, token);
         res.send({user, token});
         // return res.render("users/login.ejs",{user});
     } catch(e){

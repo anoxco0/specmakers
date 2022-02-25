@@ -79,13 +79,12 @@
        const config = {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data)
     }
     console.log(data);
-       let response = await fetch(url, config)
+       let response = await fetch(url)
        console.log(response)
        let datas = await response.json();
        console.log(datas);
