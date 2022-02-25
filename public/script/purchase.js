@@ -1,6 +1,8 @@
  
     let arr=JSON.parse(localStorage.getItem("glass"));
     
+    // console.log("arr",arr[0])
+    // console.log("cart",cartitems)
     displayglass(arr);
     function displayglass(arr){
       let pic = document.createElement("img")
@@ -82,6 +84,7 @@
       if(arr[0].color_options.length==[]){
          div_col.style.backgroundColor=arr[0].color;
           colordiv.append(div_col);
+        // document.getElementById("colordiv").append(div_col);
       } else{
           let col_obj={};
           let col=[];
@@ -96,7 +99,9 @@
           for(let x =0; x <col.length; x++){
               let div_col=document.createElement("div");
              div_col.style.backgroundColor=col[x]
+             // console.log(img_obj[x][0])
              colordiv.append(div_col);
+             //document.getElementById("colordiv").append(div_col);
              div_col.addEventListener("click", function(){
                 pic.src=img_obj[x][0];
              })
@@ -113,6 +118,7 @@
 
       btncart.addEventListener("click",function(){
         let cartitems = JSON.parse(localStorage.getItem("cartpage")) || [];
+        //cartitems.push(arr[0]);
 
         var count1=0;
         if(cartitems.length != 0){
