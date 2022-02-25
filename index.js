@@ -38,7 +38,6 @@ body("email").isEmail().withMessage('eamil should a valid email address').bail()
     if(user) throw new Error('email already exists')
     return true;
 }),
-
 body('password').isStrongPassword()
 .withMessage('try strong password that have a combination of upercase alphabet, lowercase alphabet, special characters, number and must be greaer than 8 character'),
  registeradmin);
@@ -49,9 +48,7 @@ app.post('/login', login)
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-app.set('view engine', 'html')
-// app.get('/', (req, res) => res.render('pages/index'))
-app.get('/', (req, res) => res.render('/public/index.html'))
+app.get('/', (req, res) => res.render('pages/index'))
 
 const port = process.env.PORT || 8252
 

@@ -4,230 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #img{
-         padding:15px 0px;
-         border-bottom: 1px solid rgba(128, 128, 128, 0.514);
-         cursor: pointer;
-         /* text-decoration: underline; */
-        
-        }
-        #loginmain{
-            width: 33%;
-            margin: auto;
-            margin-top: 100px;
-        }
-        #sign{
-            width:100%;
-            margin: auto;
-            text-align: center;
-            margin-top: 30px;
-        }
-        #sign>h1{
-            font-size: 24px;
-        }
-        input{
-            display: block;
-            border: 1px solid rgba(128, 128, 128, 0.589);
-            height:43px;
-            width:100%;
-            margin: auto;
-            margin-top: 20px;
-            border-radius: 30px;
-            font-size: 20px;
-            outline: transparent;
-        }
-        button{
-            height:50px;
-            width:100%;
-            margin: auto;
-            margin-top: 25px;
-            border-radius: 30px;
-            border: transparent;
-            font-size: 18px;
-            background-color: black;
-            color: white;
-            cursor: pointer;
-        }
-        div>hr{
-            width: 90%;
-        }
-        p{
-            font-size: 17px;
-            margin: 40px 0px;
-        }
-        #media{
-            width: 100%;
-            margin: auto;
-            text-align: center;
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(2,49%);
-            grid-gap: 20px 2%;
-            color:white;
-            border:transparent;
-            border-radius:5px;
-            font-size: 18px;
-        }
-        
-         #media>a>div{
-          display:flex;
-          color:white
-        } 
-        #facebook,#facebook+img{
-            background-color:#3f51b5;
-        }
-        #google,#google+img{
-            background-color:#ee3d4a;
-        }
-        #linked,#linked+img{
-            background-color: #0291e0;
-        }
-        #amazon,#amazon+img{
-            background-color:#ff9900;
-        }
-        a{
-            text-decoration: none;
-        }
-        #fb,#goo,#link,#ama{
-            margin: -8px;
-            height: 32px;
-            border: 0  5px 5px 0;
-            border-left: 1px solid rgba(128, 128, 128, 0.637);
-        }
-        #media>a{
-            margin-bottom: 10px;
-            margin-right: 10px;
-        }
-        #media>a>div{
-            height: 35px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            border-radius: 5px; 
-            font-size: 13px;
-        }
-        #media>a>div>div{
-            margin: 10px;
-
-        }
-        #media>a{
-            margin-bottom: 10px;
-        }
-        #policy{
-            width:100%;
-            margin: auto;
-            text-align: center;
-        }
-        button,a:hover{
-            cursor: pointer;
-        }
-        #policy>h4>a{
-            color:blue;
-        }
-
-        @media only screen and (min-width:376px)and(max-width:768px){
-          #media{
-          width:90%;
-          margin: auto;
-          text-align: center;
-          margin-top: 30px;
-          display: grid;
-          grid-template-columns: repeat(2,1fr);
-          color:white;
-         
-      }
-      #media>a>div{
-          height: 50px;
-          width:100%;
-          display: flex;
-          justify-content: space-between;
-          border-radius: 5px; 
-      }
-          #sign{
-              width:100%;
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-          }
-
-          input{
-          display: block;
-          /* height:50px; */
-          width:90%;
-          margin: auto;
-          margin-top: 20px;
-          border-radius: 30px;
-          font-size: 20px;
-         
-      }
-      #policy{
-          width:90%;
-          margin: auto;
-          text-align: center;
-      }
-      }
-      @media only screen and (min-width:767px) and (max-width:1028px){
-          #loginmain{
-              width: 50%;
-          }
-      }
-      @media only screen and (min-width:0px) and (max-width:767px){
-          #loginmain{
-              width: 95%;
-          }
-      }
-      @media only screen and (min-width:0px) and (max-width:375px){
-          
-          
-          #media{
-          width:100%;
-          margin: auto;
-          text-align: center;
-          margin-top: 30px;
-          display: grid;
-          grid-template-columns: repeat(1,90%);
-          grid-gap: 20px 10%;
-          color:white;
-         
-      }
-      #media>a>div{
-          height: 35px;
-          width:100%;
-          display: flex;
-          justify-content: space-between;
-          border-radius: 5px; 
-      }
-          #sign{
-              width:100%;
-              display: flex;
-              flex-wrap: wrap;
-             justify-content: center;
-          }
-
-          input{
-          display: block;
-          /* height:50px; */
-          width:80%;
-          margin: auto;
-          margin-top: 20px;
-          border-radius: 30px;
-          font-size: 20px;
-         
-      }
-      #policy{
-          width:90%;
-          margin: auto;
-          text-align: center;
-
-      }
-     
-      }
-    </style>
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0015/2879/1092/files/fav_32x32_f3e96a89-85b4-4e5e-a7ff-90579a2ccc59_32x32.png?v=1583832747" type="image/png">
+    <title>Create Account&ndash; Specsmakers Opticians PVT. LTD.</title>
+    <link rel="stylesheet" href="../css/register.css">
    <link rel="stylesheet" href="../inspect_prevent/select.prevent.css">
    <script language="javascript", type="module">
        import fun from '../inspect_prevent/prevent_ctr_comb.js'
@@ -235,15 +14,21 @@
    </script>
 </head>
 <body oncontextmenu="return false", oncopy="return false">
-    <img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/sm_payu_3401b18c-164d-49e8-8ed1-1927a3a2f24e_large.png?v=1612361697" alt="" id="img">
+    <a href="../index.html"><img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/sm_payu_3401b18c-164d-49e8-8ed1-1927a3a2f24e_large.png?v=1612361697" alt="" id="img"></a>
+
+    <!-- ------------------sign up ------------------------ -->
  <div id="loginmain">
-    <div id="sign">
+    <form action="http://localhost:8252/register" method="post" onsubmit="onSubmitHandler" id="sign">
         <h1>Nice To Meet You</h1>
-       <input type="text" placeholder="Full Name" id="name">
-       <input type="text" placeholder="Email address" id="email">
-       <input type="password" placeholder="Password" id="password">
-       <button onclick="User()"><b>Continue</b></button>
-    </div>
+       <input type="text" name="full_name" placeholder="Full Name" id="name">
+       <input type="email" name="email" placeholder="Email address"  id="email">
+       <input type="password" name="password" placeholder="Password"  id="password">
+       <input id="button" type="submit" value="Continue" name="submit" onclick="user()">
+    </form>
+      </form>
+    <!-- -----------------------sign up last----------- -->
+
+
     <div id="media">
         <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=1667514393504118&kid_directed_site=0&app_id=1667514393504118&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fscope%3Demail%26state%3D18555-37ee0dfcafe341a1925734b52ec83fea%26redirect_uri%3Dhttps%253A%252F%252Foneclicksociallogin.devcloudsoftware.com%252Fuser%252Ffacebookloginnotifier%252F%26client_id%3D1667514393504118%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D10193d00-559f-4500-a0ab-b6278a0b9c81%26tp%3Dunspecified&cancel_url=https%3A%2F%2Foneclicksociallogin.devcloudsoftware.com%2Fuser%2Ffacebookloginnotifier%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D18555-37ee0dfcafe341a1925734b52ec83fea%23_%3D_&display=page&locale=en_GB&pl_dbl=0"> 
               <div id="facebook">
@@ -272,7 +57,7 @@
     <div id="policy">
     <h4>By clicking any of the social login buttons you agree to the terms of privacy policy described <a href="https://oneclicksociallogin.devcloudsoftware.com/privacy/policy/">here</a></h4>
     <hr>
-      <h3>I have an account,<a href="login.html">Sign in</a></h3>
+      <h3>I have an account,<a href="http://localhost:8252/login">click here</a></h3>
  </div>
 
  </div>

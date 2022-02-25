@@ -23,13 +23,6 @@
        <input type="text" name="full_name" placeholder="Full Name" id="name">
        <input type="email" name="email" placeholder="Email address"  id="email">
        <input type="password" name="password" placeholder="Password"  id="password">
-       <% if (locals.errors) { %>
-        <%for(e of errors){ 
-          let error = JSON.stringify(e)%>
-          <p id="error"> <b>!</b> <%= e.msg %></p>
-        <% } %>
-        
-      <% } %>
        <input id="button" type="submit" value="Continue" name="submit" onclick="user()">
     </form>
       </form>
@@ -69,8 +62,6 @@
 
  </div>
 
-
- <script src="/public/js/users/index.js"></script>
  <script>
 
 function onSubmitHandler(e) {

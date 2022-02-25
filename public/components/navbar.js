@@ -87,8 +87,8 @@ function navbar (){
       <div  id="nolog" class="flex jusspacebet">
           <div class="flex jusspacebet">
               <div id="formar" class="flex">
-              <div><a id="black" href="http://localhost:8252/login">LOGIN</a></div>
-              <div><a id="black" href="http://localhost:8252/register">REGISTER</a></div>
+              <div><a id="black" href="../account/login.html">LOGIN</a></div>
+              <div><a id="black" href="../account/register.html">REGISTER</a></div>
               </div>
               <div id="formar2"><a id="black" href="./account/login.html"><i class="far marl5p fa-user-circle"></i></a></div>
           </div>
@@ -162,8 +162,8 @@ function navbar (){
                   <div><input id="password" type="password" placeholder="*****"></div>
                   <div><button onclick="loginPage()">Login</button></div>
                   <div id="log2">
-                      <div>New Customer? <a href="http://localhost:8252/login">CREATE YOUR ACCOUNT</a></div>
-                      <div>Lost password? <a href="http://localhost:8252/register">RECOVER PASSWORD</a></div>
+                      <div>New Customer? <a href="../account/login.html">CREATE YOUR ACCOUNT</a></div>
+                      <div>Lost password? <a href="../account/register.html">RECOVER PASSWORD</a></div>
                   </div>
               </div>
               <div id="logintrue">
