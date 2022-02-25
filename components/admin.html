@@ -15,7 +15,6 @@
   import fun from '../inspect_prevent/prevent_ctr_comb.js';
   document.onkeydown=fun;
 </script>
-
 </head>
 <body oncontextmenu="return false", oncopy="return false">
    <div>
@@ -56,7 +55,7 @@
         localStorage.setItem("shop",JSON.stringify(product));
         console.log(product);
  }
- var product2=JSON.parse(localStorage.getItem("shop2")) || [];
+ var product2=JSON.parse(localStorage.getItem("shop2"))||[];
     function submitting(){
         let object={
             name:document.getElementById("name").value,
