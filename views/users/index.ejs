@@ -11,25 +11,13 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footbar.css">
     <link rel="stylesheet" href="/css/index.css">
-    <script>
-      require('/public/js/users')
-      document.getElementById("this_nav").innerHTML=navbar();
-
- 
-      import footbar from './components/footbar.js'
-      document.getElementById('foot').innerHTML=footbar();
-     </script>
-     <link rel="stylesheet" href="./inspect_prevent/select.prevent.css">
-     <script language="JavaScript" type="module">
-        import fun from './inspect_prevent/prevent_ctr_comb.js'
-        document.onkeydown=fun;
-    </script>
+    
 </head>
 
 <body oncontextmenu="return false" oncopy="return false">
 
 
-  <div id="this_nav"></div>
+  <%- include ("../partials/navbar.ejs") %>
 
 
   <!-- @media min-width 767px -->
@@ -348,18 +336,21 @@
 
 
   <div id="foot"></div>
-
-  <% if (locals.username || locals.type) { 
-    const obj = {
-      "username":username,
-      "type":type
-    }
-    %>
-     <%= localStorage.setItem('login', JSON.Stringify(obj)) %>
-<% } %>
 </body>
 </html>
+<script type="module">
+  import navbar from '/public/js/users/navbar.js'
+  console.log(navbar);
+  document.getElementById("this_nav").innerHTML=navbar();
 
+  import footbar from './components/footbar.js'
+  document.getElementById('foot').innerHTML=footbar();
+ </script>
+ <link rel="stylesheet" href="./inspect_prevent/select.prevent.css">
+ <script language="JavaScript" type="module">
+    import fun from './inspect_prevent/prevent_ctr_comb.js'
+    document.onkeydown=fun;
+</script>
 
 <script type="module">
   
@@ -438,8 +429,8 @@
    
     setTimeout(showSlides, 3000); 
     }
-    // function localSt(user, type){
-    //   console.log(user, type)
-    // }
+    function localSt(username, type){
+      console.log(username, type)
+    }
 </script>
 <script src="./components/navbar-2.js"></script>
