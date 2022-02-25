@@ -122,10 +122,10 @@ if(user!=null){
     createlogin();
 }
 function eye(){
-    window.location.href="../collections/eyeglasses.html"
+    window.location.href="/public/collections/eyeglasses.html"
 }
 function com_glass(){
-    window.location.href="../collections/computer_glasses.html"
+    window.location.href="/public/collections/computer_glasses.html"
 } 
 let cartarr = JSON.parse(localStorage.getItem("cartpage"));
 let count = 0;
