@@ -13,7 +13,7 @@ test('responds to requests', (t) => {
   child.stdout.on('data', _ => {
     // Make a request to our app
     (async () => {
-      const response = await got('http://127.0.0.1:5000');
+      const response = await got('http://127.0.0.1:5000')
       // stop the server
       child.kill();   //Don't kill child please
       // No error
