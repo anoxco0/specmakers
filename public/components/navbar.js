@@ -5,7 +5,7 @@ function navbar (){
   <div class="fixed width100 top0 left0">
   <div id="menu2" class="width100 height63p colwhite bl1  ">
       <div class="width90 flex marauto jusspacebet">
-          <a href="/public/index.html"><div class="mar7p point"><img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/SPECSMAKERS_Logo_large.png?v=1610087240" alt=""></div></a>
+          <a href="/index.html"><div class="mar7p point"><img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/SPECSMAKERS_Logo_large.png?v=1610087240" alt=""></div></a>
 
   <!------------------------ account section ------------------------->
           <!-- search -->
@@ -21,7 +21,7 @@ function navbar (){
               <div class="mar23p10 flex point" id=" cr4" onmouseover="myAccount()" ><div>ACCOUNT</div><i id="acicon" class="far fa-user-circle"></i></i></div>
 
               <!-- cart -->
-              <a href="/public/cart.html"><div class="mar23p10 flex point colwhite"><div>CART</div id= ><span id="carticon" class="material-icons-outlined"> shopping_bag </span> </div></a>
+              <a href="/cart.html"><div class="mar23p10 flex point colwhite"><div>CART</div id= ><span id="carticon" class="material-icons-outlined"> shopping_bag </span> </div></a>
           </div>
       </div>
   </div>
@@ -35,13 +35,13 @@ function navbar (){
         <div id="menucol3" class="flex">
           <button class="flex allignitcen bord " id="eyeGlass" onclick="eye()" onmouseover="eyeGlass()">Eyeglasses <div id="chevron"></div></button>
           <button class=" flex allignitcen" id="compglass" onclick="com_glass()" onmouseover="compGlass()">Computer Glasses <div id="chevron"></div></button>
-          <a href="/public/collections/sunglass.html"><button>Sunglasses</button></a>
-          <a href="/public/collections/contact-lenses.html"><button>Contact Lenses</button></a>
-          <a href="/public/collections/accesories.html"><button>Accessories</button></a>
-          <a href="/public/products/hometryon.html"><button>Home Try-On</button></a>
-          <a href="/public/pages/stoe-locator.html"><button>Store Locator</button></a>
-          <a href="/public/pages/franchisee.html"><button>Franchise</button></a>
-          <a href="/public/products/lensmaker.html"><button>Lensmakers  </button></a>
+          <a href="/collections/sunglass.html"><button>Sunglasses</button></a>
+          <a href="/collections/contact-lenses.html"><button>Contact Lenses</button></a>
+          <a href="/collections/accesories.html"><button>Accessories</button></a>
+          <a href="/products/hometryon.html"><button>Home Try-On</button></a>
+          <a href="/pages/stoe-locator.html"><button>Store Locator</button></a>
+          <a href="/pages/franchisee.html"><button>Franchise</button></a>
+          <a href="/products/lensmaker.html"><button>Lensmakers  </button></a>
         </div>
         <div>
           <img class="mar15p point" src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/3Dlogo_large.png?v=1608103908" alt="">
@@ -55,8 +55,8 @@ function navbar (){
               <div id="line"></div>
               <div id="line"></div>
           </div>
-          <a href="/public/index.html"><div id="div767"><img id="img767" class="mart3" src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/SPECSMAKERS_Logo_large.png?v=1610087240" alt=""></div></a>
-          <a href="/public/cart.html"><div id="cart" class="mar23p10 flex point"><i class="fab marl5p fa-shopify"></i></div></a>
+          <a href="/index.html"><div id="div767"><img id="img767" class="mart3" src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/SPECSMAKERS_Logo_large.png?v=1610087240" alt=""></div></a>
+          <a href="/cart.html"><div id="cart" class="mar23p10 flex point"><i class="fab marl5p fa-shopify"></i></div></a>
       </div>
   </div>
 </div>
@@ -88,7 +88,7 @@ function navbar (){
           <div class="flex jusspacebet">
               <div id="formar" class="flex">
               <div><a id="black" href="/publi/account/login.html">LOGIN</a></div>
-              <div><a id="black" href="/public/account/login.html">REGISTER</a></div>
+              <div><a id="black" href="/account/login.html">REGISTER</a></div>
               </div>
               <div id="formar2"><a id="black" href="./account/login.html"><i class="far marl5p fa-user-circle"></i></a></div>
           </div>
@@ -104,44 +104,44 @@ function navbar (){
       </div>
       <div>
           <div class="flex">
-              <div><a id="black" href="/public/collections/eyeglasses.html">Eyeglasses</a></div>
+              <div><a id="black" href="/collections/eyeglasses.html">Eyeglasses</a></div>
               <div id="chevron"></div>
           </div>
           <div><img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_f04b0118-b1e6-4a12-89f3-36b6cce334f8_360x.jpg?v=1641367173" alt=""></div>
       </div>
       <div>
           <div class="flex">
-              <div><a id="black" href="/public/collections/computer_glasses.html">Computer Glasses</a></div>
+              <div><a id="black" href="/collections/computer_glasses.html">Computer Glasses</a></div>
               <div id="chevron"></div>
           </div>
           <div><img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/products/3_8bd9586f-2d63-4b61-b944-80fdfde0e2bb_360x.jpg?v=1609503279" alt=""></div>
       </div>
       <div>
-          <div><a id="black" href="/public/collections/sunglass.html">Sunglasses</a></div>
+          <div><a id="black" href="/collections/sunglass.html">Sunglasses</a></div>
           <div><img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/products/P6045-3_28426c17-6bf9-4598-b87f-fffbd9db5f46_360x.jpg?v=1604041970" alt=""></div>
       </div>
       <div>
-          <div><a id="black" href="/public/collections/contact-lenses.html">Contact Lenses</a></div>
+          <div><a id="black" href="/collections/contact-lenses.html">Contact Lenses</a></div>
           <div><img src="https://cdn.shopify.com/s/files/1/0015/2879/1092/products/Toric-Lens-01_f950278e-e4f1-4fbe-9574-cd4288a265f9_360x.jpg?v=1596562599" alt=""></div>
       </div>
       <div>
-          <div><a id="black" href="/public/collections/accesories.html">Accessories</a></div>
+          <div><a id="black" href="/collections/accesories.html">Accessories</a></div>
           <div></div>
       </div>
       <div>
-          <div><a id="black" href="/public/products/hometryon.html">Home Try-On</a></div>
+          <div><a id="black" href="/products/hometryon.html">Home Try-On</a></div>
           <div></div>
       </div>
       <div>
-          <div><a id="black" href="/public/pages/stoe-locator.html">Store Locator</a></div>
+          <div><a id="black" href="/pages/stoe-locator.html">Store Locator</a></div>
           <div></div>
       </div>
       <div>
-          <div><a id="black" href="/public/pages/franchisee.html">Franchise</a></div>
+          <div><a id="black" href="/pages/franchisee.html">Franchise</a></div>
           <div></div>
       </div>
       <div>
-          <div><a id="black" href="/public/products/lensmaker.html">Lensmakers</a></div>
+          <div><a id="black" href="/products/lensmaker.html">Lensmakers</a></div>
           <div></div>
       </div>
   </div>
