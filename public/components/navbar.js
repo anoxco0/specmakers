@@ -1,4 +1,6 @@
-
+function navbar (){
+    return ` <!-- navbar -->
+     
 
   <div class="fixed width100 top0 left0">
   <div id="menu2" class="width100 height63p colwhite bl1  ">
@@ -27,7 +29,7 @@
   <!-- account section last -->
 
 
-  <!--  3rd menu bar section -->
+
   <div id="menu3" class="width100 backwhite height53p borbot2p">
       <div class="width90 flex marauto jusspacebet">
         <div id="menucol3" class="flex">
@@ -63,9 +65,6 @@
  
   </div>
 </div>
-<!--  3rd bar section section -->
-
-<!-- rsponsive account section -->
 <div id="resmenu">
   <div id="resmenu_content">
       <div>
@@ -147,8 +146,6 @@
       </div>
   </div>
 </div>
-<!-- responsive account section last -->
-
 
 
 <div id="main_account">
@@ -166,7 +163,7 @@
                   <div><button onclick="loginPage()">Login</button></div>
                   <div id="log2">
                       <div>New Customer? <a href="http://localhost:8252/login">CREATE YOUR ACCOUNT</a></div>
-                      <div>Lost password? <a href="http://localhost:8252/login">RECOVER PASSWORD</a></div>
+                      <div>Lost password? <a href="http://localhost:8252/register">RECOVER PASSWORD</a></div>
                   </div>
               </div>
               <div id="logintrue">
@@ -229,3 +226,8 @@
       </div>
   </div>
 </div>
+
+
+<!-- navbar -->`
+}
+export default navbar
