@@ -29,9 +29,9 @@ const login= async(req, res)=>{
 
         dir_name = path.normalize(`${__dirname}/..`)
         let Path = path.join(dir_name+'/public/index.html')
-        // console.log(path.join(dir_name+'/public/index.html'));
+        console.log(path.join(dir_name+'/public/index.html'));
         const [username, type] = [user.full_name, user.type]
-        return res.render('users/index.ejs', {username:username, type:type});
+        return res.send(Path, {username:username, type:type});
     } catch(e){
         return res.status(500).send({message:e.message});
     }
