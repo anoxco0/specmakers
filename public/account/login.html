@@ -299,17 +299,11 @@
            };
 
            console.log(data);
-       let url = `http://localhost:8252/login`
+       let url = `https://specmakers.herokuapp.com/login`
        const config = {
         method: 'POST',
         headers: {
-            "Access-Control-Allow-Origin": "*",
-            'X-Powered-By':'Express',
             'Content-Type': 'application/json',
-            'User-Agent':'PostmanRuntime/7.29.0',
-            'Accept':'*/*',
-            'Accept-Encoding':'gzip, deflate, br',
-            'Connection':'keep-alive'
         },
         body: JSON.stringify(data)
     }

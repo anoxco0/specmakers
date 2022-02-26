@@ -156,20 +156,11 @@
               </div>
 
               <h3>other images</h3>
-              <div id="otherimg">
-                <div id="some">
-                  <div class="flex">
-                  <label for="">  provide url </label>
-                <input type="url" name="other_image" id="other_image" placeholder="Other Image" >
-                </div>
-                
-                <div class="flex">
-                  <label for="">or upload </label>
-                <input type="file" name="other_image" id="other_image" placeholder="Other Image" >
-                </div>
-                </div>
-              </div>
-              <div id="addotherimg"><div onclick="addnewc()" id="add">add more image</div></div>
+               <div id="otherimg">
+
+               </div>
+              <div id="addotherimg"><button onclick="addnewc(event)" id="add">add more image</button></div>
+              <p id="valid" style="color: red;"></p>
             </div>
             </div>
             </div>
@@ -184,8 +175,32 @@
   </body>
 </html>
 <script>
-  function addnewc(e){
-    document.getElementById('some')+=document.getElementById('some')
-  }
+  let i = 0;
+  
+    function addnewc(e){
+      e.preventDefault();
+      if(i<5){
+        const div1 = document.createElement('div');
+        const label1 = document.createElement('label');
+        label1.innerText=("provide url");
+        const input1 = document.createElement('input');
+        input1.setAttribute("type", "url");
+        div1.append(label1, input1)
+    
+        const div2 = document.createElement('div');
+        const label2 = document.createElement('label');
+        label2.innerText=("provide url")
+        const input2 = document.createElement('input');
+        input2.setAttribute("type", "file");
+        div2.append(label2, input2);
+        document.getElementById("otherimg").append(div1, div2)
+
+        i++;
+      }
+      else{
+          document.getElementById("valid").innerHTML="! you can upload only 5 pictures";
+      }
+    } 
+
 
 </script>
