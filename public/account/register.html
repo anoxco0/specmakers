@@ -87,6 +87,7 @@
        let datas = await response.json();
 
        if(!datas.token){
+        document.getElementById('paras').innerHTML="";
            for(let i = 0; i < datas.length; i++){
                const para = document.createElement("p");
                para.innerText=("!"+datas[i].msg);
@@ -95,9 +96,10 @@
            }
        }
        else if(datas.user){
+           document.getElementById('paras').innerHTML="";
            alert("registration Successful remember email and password rediracting to login");
            localStorage.setItem('user_status', JSON.stringify(datas));
-           window.location.href('../login.html');
+           window.location.href='../login.html';
        }
         }catch(e){
             console.log(e)
