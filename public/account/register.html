@@ -23,6 +23,7 @@
        <input type="text" name="full_name" placeholder="Full Name" id="name">
        <input type="email" name="email" placeholder="Email address"  id="email">
        <input type="password" name="password" placeholder="Password"  id="password">
+       <div id="paras"></div>
        <button id="button" onclick="register()" >Continue</button>
     </div>
       </form>
@@ -86,12 +87,18 @@
        let datas = await response.json();
        console.log(datas);
 
-    //    if(data.error==true){
-    //        alert('regidtration failed')
-    //    }
-    //    else{
-    //        alert('registration successfull')
-    //    }
+       if(!datas.token){
+           for(let i = 0; i < datas.length; i++){
+               const para = document.createElement("p");
+               document.getElementById('paras').append("!"+para);
+               document.getElementById('paras').style.color='red';
+           }
+       }
+       else if(datas.user){
+           alert("registration Successful remember email and password rediracting to login");
+           localStorage.setItem('user_status', JSON.stringify({datas}));
+           window.location.href('../login.html');
+       }
         }catch(e){
             console.log(e)
         }

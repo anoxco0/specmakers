@@ -14,14 +14,14 @@ const login= async(req, res)=>{
         const user = await User.findOne({email:req.body.email});
         if(!user) {
             // return res.render("users/login.ejs",{error:error})
-            return res.send("{error}")
+            return res.send({error})
         } 
         
         const match = user.checkPassword(req.body.password);
         if(!match) {
             error = 'invalid username or password'
             // return res.render("users/login.ejs",{error})
-            return res.send("error")
+            return res.send(error)
         } 
         const token = newToken(user);
         return res.send({user, token});
@@ -35,7 +35,6 @@ const register = async(req, res)=>{
     try{
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            console.log(errors.array());
         return res.send(errors.array());
         
         }
