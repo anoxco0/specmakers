@@ -6,7 +6,7 @@ const User = require('../models/users.model');
 const path = require('path');
 const { toPath } = require('lodash');
 const newToken = (user)=>{
-    return jwt.sign({user}, "shhhhh");
+    return jwt.sign({user}, process.env.JWT_SECRET_KEY);
 }
 
 const login= async(req, res)=>{
