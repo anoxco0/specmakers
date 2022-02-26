@@ -23,7 +23,7 @@ const login= async(req, res)=>{
             // return res.render("users/login.ejs",{error})
             return res.send("error")
         } 
-        // const token = newToken(user);
+        const token = newToken(user);
         return res.send({user, token});
 
     } catch(e){
@@ -46,7 +46,7 @@ const register = async(req, res)=>{
             type:"customer"
         })
         const user = await User.findOne({email:req.body.email}).lean().exec();
-        // const token = newToken(user) 
+        const token = newToken(user) 
         // console.log(user, token);
         res.send({user, token});
     } catch(e){
