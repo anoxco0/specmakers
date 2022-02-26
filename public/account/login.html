@@ -297,8 +297,6 @@
                 email:document.getElementById("Log_email").value,
                 password:document.getElementById("Log_password").value
            };
-
-           console.log(data);
        let url = `https://specmakers.herokuapp.com/login`
        const config = {
         method: 'POST',
@@ -307,9 +305,7 @@
         },
         body: JSON.stringify(data)
     }
-    console.log(data);
        let response = await fetch(url,config);
-       console.log(response)
        let datas = await response.json();
        console.log(datas);
 

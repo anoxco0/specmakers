@@ -74,8 +74,7 @@
                 password:document.getElementById("password").value
            }
 
-           console.log(data);
-       let url = 'http://localhost:8252/register'
+           let url = `https://specmakers.herokuapp.com/register`
        const config = {
         method: 'POST',
         headers: {
@@ -83,9 +82,7 @@
         },
         body: JSON.stringify(data)
     }
-    console.log(data);
-       let response = await fetch(url)
-       console.log(response)
+       let response = await fetch(url,config);
        let datas = await response.json();
        console.log(datas);
 
