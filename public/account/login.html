@@ -310,6 +310,7 @@
         let datas = await response.json();
 
         console.log(datas);
+        console.log(datas.token);
 
         if(datas.token!==undefined){
            let obj ={
@@ -339,6 +340,7 @@
                para.innerText=("! invalid email or password");
                document.getElementById('paras').append(para);
                document.getElementById('paras').style.color='red';
+               console.log(data.token)
        } 
         }catch(error){
             const para = document.createElement("p");
