@@ -153,10 +153,6 @@
                 <label for=""> or upload </label>
               <input type="file" name="side_image" id="side_image" placeholder="Side Image" >
               </div>
-              <h3>other images</h3> <h3></h3>
-               <div id="otherimg"></div>
-              <div id="addotherimg"><button onclick="addnewc(event)" id="add">add more image</button></div>
-              <p id="valid" style="color: red;"></p>
               </div>
 
             </div>
@@ -175,30 +171,7 @@
   </body>
 </html>
 <script>
-  let i = 0;
   let j = 0;
-    function addnewc(e){
-      e.preventDefault();
-      if(i<5){
-        const div1 = document.createElement('div');
-        const label1 = document.createElement('label');
-        label1.innerText=("provide url");
-        const input1 = document.createElement('input');
-        input1.setAttribute("type", "url");
-        div1.append(label1, input1)
-    
-        const div2 = document.createElement('div');
-        const label2 = document.createElement('label');
-        label2.innerText=("upload image")
-        const input2 = document.createElement('input');
-        input2.setAttribute("type", "file");
-        div2.append(label2, input2);
-        document.getElementById("otherimg").append(div1, div2)
-        i++;
-        if(i==5) document.getElementById('addotherimg').style.display="none"
-      }
-      else document.getElementById("valid").innerHTML="! you can upload only 5 pictures"; 
-    } 
 
    
     function addnewcolor(e){
@@ -306,34 +279,7 @@
         div32.append(label32, input32);
         div3.append(div31, div32)
 
-        const dive = document.createElement('div')
-        const but = document.createElement("button");
-        but.innerText="addmoreimage";
-        let count = 0;
-        but.addEventListener("click", function(e){
-         e.preventDefault()
-          if(count<5){
-        const div1 = document.createElement('div');
-        const label1 = document.createElement('label');
-        label1.innerText=("provide url");
-        const input1 = document.createElement('input');
-        input1.setAttribute("type", "url");
-        div1.append(label1, input1)
-    
-        const div2 = document.createElement('div');
-        const label2 = document.createElement('label');
-        label2.innerText=("upload image")
-        const input2 = document.createElement('input');
-        input2.setAttribute("type", "file");
-        div2.append(label2, input2);
-        dive.append(div1, div2)
-        count++;
-        if(count==5) but.style.display="none"
-      }
-      else document.getElementById("valid").innerHTML="! you can upload only 5 pictures"; 
-      });
-
-      main_div.append(div1,h2, div2, h3, div3, dive, but)
+      main_div.append(div1,h2, div2, h3, div3)
       document.getElementById('products_color').append(main_div)
        }
        j++;

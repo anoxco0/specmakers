@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
     frame_size:{type:String, required:true},
     price:{type:Number, required:true},
     offer_name:{type:String, required:true},
-    specifications:{type:String, required:false},
+    specifications:[{type:String, required:false}],
     color_options:[
         {
             color:{type:String, required:true},
