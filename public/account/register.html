@@ -85,12 +85,11 @@
     }
        let response = await fetch(url,config);
        let datas = await response.json();
-       console.log(datas);
 
        if(!datas.token){
            for(let i = 0; i < datas.length; i++){
                const para = document.createElement("p");
-               para.innerText=datas[i].msg;
+               para.innerText=("!"+datas[i].msg);
                document.getElementById('paras').append(para);
                document.getElementById('paras').style.color='red';
            }
