@@ -248,7 +248,7 @@
        <input type="email" name="email"  placeholder="Email address" value="" id="Log_email">
        <input type="password" name="password" placeholder="Password"  id="Log_password">
        <div id="paras"></div>
-       <button id="button"  onclick="fun()">Continue</button>
+       <button id="button"  onclick="fun(event)">Continue</button>
 
     </div>
     <!-- -----------------------sign in last----------- -->
@@ -292,7 +292,8 @@
 </html>
 <script>
 
-    async function fun(){
+    async function fun(e){
+        e.preventDefault()
         try{
             let data={
                 email:document.getElementById("Log_email").value,
