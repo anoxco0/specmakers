@@ -316,8 +316,8 @@
            let obj ={
                user_id : datas.user._id,
                username : datas.user.full_name,
-               email : data.user.email,
-               type : data.user.type
+               email : datas.user.email,
+               type : datas.user.type
            }
            console.log(obj);
            
@@ -343,6 +343,7 @@
                console.log(data.token)
        } 
         }catch(error){
+            document.getElementById('paras').innerHTML="";
             const para = document.createElement("p");
             para.innerText=("! invalid email or password");
             document.getElementById('paras').append(para);
