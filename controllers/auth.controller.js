@@ -1,21 +1,20 @@
 require("dotenv").config()
 const {body, validationResult} = require('express-validator');
+
 const jwt = require('jsonwebtoken');
 const User = require('../models/users.model');
 const path = require('path');
 const { toPath } = require('lodash');
 const newToken = (user)=>{
-    return jwt.sign({user}, 'shhhhh');
+    return jwt.sign({user}, process.env.JWT_SECRET_KEY);
 }
 
 const login= async(req, res)=>{
     try{
-        console.log("some")
         const user = await User.findOne({email:req.body.email});
         if(!user) {
             // return res.render("users/login.ejs",{error:error})
             return res.send("{error}")
-            
         } 
         
         const match = user.checkPassword(req.body.password);
@@ -23,19 +22,20 @@ const login= async(req, res)=>{
             error = 'invalid username or password'
             // return res.render("users/login.ejs",{error})
             return res.send("error")
-           
         } 
-        // const token = newToken(user);
+        const token = newToken(user);
+       
+
         // dir_name = path.normalize(`${__dirname}/..`)
         // let Path = path.join(dir_name+'/public/index.html')
 
         // let Path = path.join(dir_name+'/views/users/redirect.ejs')
         // const [username, type] = [user.full_name, user.type]
-        return res.send(user);
+        return res.send({user, token});
         // return res.sendFile(Path, {username:username, type:type});
         // return res.render(Path, {username:username, type:type});
     } catch(e){
-        return res.status(500).send("mes");
+        return res.status(500).send({message:e.message});
     }
 }
 
@@ -54,9 +54,9 @@ const register = async(req, res)=>{
             type:"customer"
         })
         const user = await User.findOne({email:req.body.email}).lean().exec();
-        // const token = newToken(user) 
+        const token = newToken(user) 
         // console.log(user, token);
-        res.send(user);
+        res.send({user, token});
         // return res.render("users/login.ejs",{user});
     } catch(e){
         return res.status(500).send({message:e.message});
