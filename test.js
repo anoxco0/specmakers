@@ -1,28 +1,44 @@
-const { spawn } = require('child_process');
-const got = require('got');
-const test = require('tape');
+// 
 
-//strat the app
-const env = Object.assign({}, process.env, {PORT: 5000});
-const child = spawn('node', ['index.js'], {env});
-
-test('responds to requests', (t) => {
-  t.plan(4);
-
-  // Wait until the server is ready
-  child.stdout.on('data', _ => {
-    // Make a request to our app
-    (async () => {
-      const response = await got('http://127.0.0.1:5000')
-      // stop the server
-      child.kill();   //Don't kill child please
-      // No error
-      t.false(response.error);
-      // Successful response
-      t.equal(response.statusCode, 200);
-      // Assert content checks
-      t.notEqual(response.body.indexOf("<title>Node.js Getting Started on Heroku</title>"), -1);
-      t.notEqual(response.body.indexOf("Getting Started on Heroku with Node.js"), -1);
-    })();
+// Requiring module
+const assert = require('assert');
+  
+// We can group similar tests inside a describe block
+describe("Simple Calculations", () => {
+  before(() => {
+    console.log( "This part executes once before all tests" );
+  });
+  
+  after(() => {
+    console.log( "This part executes once after all tests" );
+  });
+      
+  // We can add nested blocks for different tests
+  describe( "Test1", () => {
+    beforeEach(() => {
+      console.log( "executes before every test" );
+    });
+      
+    it("Is returning 5 when adding 2 + 3", () => {
+      assert.equal(2 + 3, 5);
+    });
+  
+    it("Is returning 6 when multiplying 2 * 3", () => {
+      assert.equal(2*3, 6);
+    });
+  });
+  
+  describe("Test2", () => {
+    beforeEach(() => {
+      console.log( "executes before every test" );
+    });
+      
+    it("Is returning 4 when adding 2 + 3", () => {
+      assert.equal(2 + 3, 4);
+    });
+  
+    it("Is returning 8 when multiplying 2 * 4", () => {
+      assert.equal(2*4, 8);
+    });
   });
 });

@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.get('/', async(req, res)=>{
     try{
+        console.log("sum")
         const user = await User.find().lean().exec();
+
         return res.send(user);
     } catch(e){
         return res.status(500).send({message:e.message});

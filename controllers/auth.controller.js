@@ -5,15 +5,17 @@ const User = require('../models/users.model');
 const path = require('path');
 const { toPath } = require('lodash');
 const newToken = (user)=>{
-    return jwt.sign({user}, process.env.SECRET_KEY);
+    return jwt.sign({user}, 'shhhhh');
 }
 
 const login= async(req, res)=>{
     try{
+        console.log("some")
         const user = await User.findOne({email:req.body.email});
         if(!user) {
             // return res.render("users/login.ejs",{error:error})
             return res.send("{error}")
+            
         } 
         
         const match = user.checkPassword(req.body.password);
@@ -21,10 +23,9 @@ const login= async(req, res)=>{
             error = 'invalid username or password'
             // return res.render("users/login.ejs",{error})
             return res.send("error")
+           
         } 
-        const token = newToken(user);
-       
-
+        // const token = newToken(user);
         // dir_name = path.normalize(`${__dirname}/..`)
         // let Path = path.join(dir_name+'/public/index.html')
 
@@ -34,7 +35,7 @@ const login= async(req, res)=>{
         // return res.sendFile(Path, {username:username, type:type});
         // return res.render(Path, {username:username, type:type});
     } catch(e){
-        return res.status(500).send({message:e.message});
+        return res.status(500).send("mes");
     }
 }
 
@@ -53,9 +54,9 @@ const register = async(req, res)=>{
             type:"customer"
         })
         const user = await User.findOne({email:req.body.email}).lean().exec();
-        const token = newToken(user) 
-        console.log(user, token);
-        res.send({user, token});
+        // const token = newToken(user) 
+        // console.log(user, token);
+        res.send(user);
         // return res.render("users/login.ejs",{user});
     } catch(e){
         return res.status(500).send({message:e.message});

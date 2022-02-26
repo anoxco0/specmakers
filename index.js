@@ -9,7 +9,9 @@ const {body, validationResult} = require('express-validator');
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json());
+
 
 app.use(express.urlencoded({extended: true }))
 
@@ -17,6 +19,9 @@ app.use('/register', userController);
 app.use('/login', userController);
 app.use('/users', userController);
 
+app.set('views', path.join(__dirname, 'views'))
+
+app.set('view engine', 'ejs')
 app.post('/register', 
 body('full_name').isLength({min:5, max:15}).withMessage("name should be betweeen 3 to 15 characters"),
 body("email").isEmail().withMessage('eamil should a valid email address').bail()
@@ -45,9 +50,8 @@ body('password').isStrongPassword()
 app.post('/login', login)
 
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+
+
 app.get('/', (req, res) => res.render('pages/index'))
 
 const port = process.env.PORT || 8252
