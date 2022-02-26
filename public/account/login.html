@@ -308,7 +308,7 @@
         body: JSON.stringify(data)
     }
     console.log(data);
-       let response = await fetch(url)
+       let response = await fetch(url,config);
        console.log(response)
        let datas = await response.json();
        console.log(datas);

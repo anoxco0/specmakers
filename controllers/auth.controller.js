@@ -13,14 +13,14 @@ const login= async(req, res)=>{
         const user = await User.findOne({email:req.body.email});
         if(!user) {
             // return res.render("users/login.ejs",{error:error})
-            return res.send({error})
+            return res.send("{error}")
         } 
         
         const match = user.checkPassword(req.body.password);
         if(!match) {
             error = 'invalid username or password'
             // return res.render("users/login.ejs",{error})
-            return res.send(error)
+            return res.send("error")
         } 
         const token = newToken(user);
        
@@ -30,7 +30,7 @@ const login= async(req, res)=>{
 
         // let Path = path.join(dir_name+'/views/users/redirect.ejs')
         // const [username, type] = [user.full_name, user.type]
-        return res.send({user, token});
+        return res.send(user);
         // return res.sendFile(Path, {username:username, type:type});
         // return res.render(Path, {username:username, type:type});
     } catch(e){

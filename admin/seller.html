@@ -208,16 +208,6 @@
     //               <option id="black" value="black">Black</option>
     //               <option id="gray" value="gray">Gray</option>
     //               <option id="yellow" value="yellow">Yellow</option>
-    //               <option id="light_gold" value="light_gold">Light Gold</option>
-    //               <option id="brown" value="brown">Brown</option>
-    //               <option id="pink_shine" value="pink_shine">Pink Shine</option>
-    //               <option id="Purple" value="purple">Purple</option>
-    //               <option id="silver" value="silver">Silver</option>
-    //               <option id="green" value="green">Green</option>
-    //               <option id="light_green" value="light_green">Light Green</option>
-    //               <option id="blue" value="blue">Blue</option>
-    //               <option id="pink" value="pink">Pink</option>
-    //               <option id="pink_tortoise" value="pink_tortoise">Pink Tortoise</option>
     //           </select>
             // <div id="images">
             //   <h3>front image</h3>
@@ -255,12 +245,41 @@
             // </div>
             // <div id="addothercolor"><button onclick="addnewcolor(event)" id="add">add more color</button></div>
 
-    function addothercolor(){
+    function addothercolor(e){
+      e.preventDefault()
       const main_div = document.createElement('div');
       const label1 = document.createElement('label');
       const select = document.createElement('select');
-      const option = document.createElement('option');
-      option.innerText=;
+      const option1 = document.createElement('option');
+      option1.innerText="Red";
+      const option2 = document.createElement('option');
+      option2.innerText="Black";
+      const option3 = document.createElement('option');
+      option3.innerText=Gray;
+      const option4 = document.createElement('option');
+      option4.innerText="Yellow";
+      const option5 = document.createElement('option');
+      option5.innerText="Light gold";
+      const option6 = document.createElement('option');
+      option6.innerText="Brown";
+      const option7 = document.createElement('option');
+      option7.innerText="Purple";
+      const option8 = document.createElement('option');
+      option8.innerText="Silver";
+      const option9 = document.createElement('option');
+      option9.innerText="Green";
+      const option10 = document.createElement('option');
+      option10.innerText="Light Green";
+      const option11 = document.createElement('option');
+      option11.innerText="Blue";
+      const option12 = document.createElement('option');
+      option12.innerText="Pink";
+      const option13 = document.createElement('option');
+      option13.innerText="Pink Tortoise";
+      const option14 = document.createElement('option');
+      option14.innerText="Pink Shine";
+      select.append(option1, option2, option3, option4, option5, option6, option7, option8, option9, option10, option11, option12, option13, option14)
+
 
 
 
