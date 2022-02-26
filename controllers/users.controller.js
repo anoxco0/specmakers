@@ -3,16 +3,16 @@ const express = require('express');
 const User = require('../models/users.model')
 const router = express.Router();
 
-router.get('/', async(req, res)=>{
+router.get("", async (req,res) =>{
     try{
-        console.log("sum")
         const user = await User.find().lean().exec();
-
         return res.send(user);
-    } catch(e){
-        return res.status(500).send({message:e.message});
     }
-});
+    catch(err){
+        return res.status(500).send(err.message);
+    }
+})
+
 // router.post('', async(req, res)=>{
 //     try{
 //         const user = await User.create({
