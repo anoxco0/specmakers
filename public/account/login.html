@@ -310,36 +310,38 @@
         let datas = await response.json();
 
         console.log(datas);
-    //     if(!datas.token){
-    //     document.getElementById('paras').innerHTML="";
-    //            const para = document.createElement("p");
-    //            para.innerText=("! invalid email or password");
-    //            document.getElementById('paras').append(para);
-    //            document.getElementById('paras').style.color='red';
-    //    }  else if(datas.user){
-    //        let obj ={
-    //            user_id = datas.user._id,
-    //            username = datas.user.full_name,
-    //            email = data.user.email,
-    //            type = data.user.type
-    //        }
-    //        console.log(obj);
-           
-    //        document.getElementById('paras').innerHTML="../admin/seller.html";
-    //        alert("login successful");
-    //        localStorage.setItem('user_status', JSON.stringify(obj));
-    //        for(let i = 0; i<obj.type.length; i++)
-    //         if(obj.type[i]=="admin") windows.location.href="../admin/seller.html";
 
-    //         for(let i = 0; i<obj.type.length; i++)
-    //         if(obj.type[i]=="seller") windows.location.href="../admin/seller.html";
-
-    //         for(i = 0; i<obj.type.length; i++)
-    //         if(obj.type[i]=="customer")  window.location.href='../index.html';
+        if(datas.token){
+           let obj ={
+               user_id = datas.user._id,
+               username = datas.user.full_name,
+               email = data.user.email,
+               type = data.user.type
+           }
+           console.log(obj);
            
-    //    }
+           document.getElementById('paras').innerHTML="../admin/seller.html";
+           alert("login successful");
+           localStorage.setItem('user_status', JSON.stringify(obj));
+           for(let i = 0; i<obj.type.length; i++)
+            if(obj.type[i]=="admin") window.location.href="../admin/seller.html";
+
+            for(let i = 0; i<obj.type.length; i++)
+            if(obj.type[i]=="seller") window.location.href="../admin/seller.html";
+
+            for(i = 0; i<obj.type.length; i++)
+            if(obj.type[i]=="customer")  window.location.href='../index.html';
+           
+       }
+      else{
+        document.getElementById('paras').innerHTML="";
+               const para = document.createElement("p");
+               para.innerText=("! invalid email or password");
+               document.getElementById('paras').append(para);
+               document.getElementById('paras').style.color='red';
+       } 
         }catch(error){
-            console.log("error", error)
+            
         }
 
      }

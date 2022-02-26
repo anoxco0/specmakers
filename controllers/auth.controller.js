@@ -13,8 +13,9 @@ const login= async(req, res)=>{
     try{
         const user = await User.findOne({email:req.body.email});
         if(!user) {
-            // return res.render("users/login.ejs",{error:error})
-            return res.send({error})
+            error = 'invalid username or password'
+            // return res.render("users/login.ejs",{error})
+            return res.send(error)
         } 
         
         const match = user.checkPassword(req.body.password);
