@@ -61,10 +61,10 @@ input{
 div>hr{
     width: 90%;
 }
-p{
+/* p{
     font-size: 17px;
     margin: 40px 0px;
-}
+} */
 #media{
     width: 100%;
     margin: auto;
