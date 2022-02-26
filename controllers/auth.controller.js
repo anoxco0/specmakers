@@ -1,3 +1,4 @@
+require("dotenv").config()
 const {body, validationResult} = require('express-validator');
 const alert = require('alert')
 const jwt = require('jsonwebtoken');
