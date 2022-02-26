@@ -316,13 +316,14 @@
                document.getElementById('paras').append(para);
                document.getElementById('paras').style.color='red';
        }
-    //    else if(datas.user){
-    //        let obj ={
-    //            user_id = datas.user._id,
-    //            username = datas.user.full_name,
-    //            email = data.user.email,
-    //            type = data.user.type
-    //        }
+       else if(datas.user){
+           let obj ={
+               user_id = datas.user._id,
+               username = datas.user.full_name,
+               email = data.user.email,
+               type = data.user.type
+           }
+           console.log(obj);
     //        document.getElementById('paras').innerHTML=null;
     //        alert("login successful");
     //        localStorage.setItem('user_status', JSON.stringify(obj));
@@ -336,8 +337,8 @@
     //         if(obj.type[i]=="customer")  window.location.href='../index.html';
            
     //    }
-        }catch(e){
-            console.log(e)
+        }catch(error){
+            console.log("error", error)
         }
 
      }
