@@ -163,6 +163,7 @@
               <p id="valid" style="color: red;"></p>
             </div>
             </div>
+            <div id="addothercolor"><button onclick="addnewcolor(event)" id="add">add more color</button></div>
             </div>
 
             <label for=""> Quantity </label>
@@ -189,18 +190,80 @@
     
         const div2 = document.createElement('div');
         const label2 = document.createElement('label');
-        label2.innerText=("provide url")
+        label2.innerText=("upload image")
         const input2 = document.createElement('input');
         input2.setAttribute("type", "file");
         div2.append(label2, input2);
         document.getElementById("otherimg").append(div1, div2)
-
         i++;
+        if(i==5) document.getElementById('addotherimg').style.display="none"
       }
-      else{
-          document.getElementById("valid").innerHTML="! you can upload only 5 pictures";
-      }
+      else document.getElementById("valid").innerHTML="! you can upload only 5 pictures"; 
     } 
 
+    <div id="products_color">
+                <h2>select color and upload images or privide link</h2>
+                <div id="product"> 
+                  <label for="">Select Color</label>
+                <select name="color" id="color">
+                  <option id="red" value="red">Red</option>
+                  <option id="black" value="black">Black</option>
+                  <option id="gray" value="gray">Gray</option>
+                  <option id="yellow" value="yellow">Yellow</option>
+                  <option id="light_gold" value="light_gold">Light Gold</option>
+                  <option id="brown" value="brown">Brown</option>
+                  <option id="pink_shine" value="pink_shine">Pink Shine</option>
+                  <option id="Purple" value="purple">Purple</option>
+                  <option id="silver" value="silver">Silver</option>
+                  <option id="green" value="green">Green</option>
+                  <option id="light_green" value="light_green">Light Green</option>
+                  <option id="blue" value="blue">Blue</option>
+                  <option id="pink" value="pink">Pink</option>
+                  <option id="pink_tortoise" value="pink_tortoise">Pink Tortoise</option>
+              </select>
+            <div id="images">
+              <h3>front image</h3>
+              <div id="upimg">
+                <div class="flex">
+                  <label for=""> provide url </label>
+              <input type="url" name="front_image" id="front_image" placeholder="Front Image" >
+                </div>
+              <div class="flex">
+                <label for=""> or upload </label>
+              <input type="file" name="front_image" id="front_image" placeholder="Front Image" >
+              </div>
+              </div>
+
+              <h3>side image</h3>
+              <div id="upimg">
+                <div class="flex">
+                  <label for=""> provide url </label>
+              <input type="url" name="side_image" id="side_image" placeholder="Side Image" >
+                </div>
+              
+              <div class="flex">
+                <label for=""> or upload </label>
+              <input type="file" name="side_image" id="side_image" placeholder="Side Image" >
+              </div>
+              </div>
+
+              <h3>other images</h3>
+               <div id="otherimg">
+
+               </div>
+              <div id="addotherimg"><button onclick="addnewc(event)" id="add">add more image</button></div>
+              <p id="valid" style="color: red;"></p>
+            </div>
+            </div>
+            <div id="addothercolor"><button onclick="addnewcolor(event)" id="add">add more color</button></div>
+            </div>
+
+    function addothercolor(){
+
+      const main_div = document.createElement('div');
+      const h1 = document.createElement('h2');
+      
+
+    }
 
 </script>
