@@ -68,6 +68,7 @@ select{
 }
 #black{
     background-color: black;
+    color: white;
 }
 #gray{
     background-color: gray;
@@ -120,6 +121,11 @@ select{
 }
 #add:hover{
     background-color: aquamarine;
+}
+#products_color>div{
+    border: 1px solid rgb(182, 8, 8);
+    border-radius: 10px;
+    padding: 20px;
 }
 @media only screen and (max-width:1220px){
     #adminpage{
