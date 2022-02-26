@@ -23,17 +23,9 @@ const login= async(req, res)=>{
             // return res.render("users/login.ejs",{error})
             return res.send("error")
         } 
-        const token = newToken(user);
-       
-
-        // dir_name = path.normalize(`${__dirname}/..`)
-        // let Path = path.join(dir_name+'/public/index.html')
-
-        // let Path = path.join(dir_name+'/views/users/redirect.ejs')
-        // const [username, type] = [user.full_name, user.type]
+        // const token = newToken(user);
         return res.send({user, token});
-        // return res.sendFile(Path, {username:username, type:type});
-        // return res.render(Path, {username:username, type:type});
+
     } catch(e){
         return res.status(500).send({message:e.message});
     }
@@ -54,10 +46,9 @@ const register = async(req, res)=>{
             type:"customer"
         })
         const user = await User.findOne({email:req.body.email}).lean().exec();
-        const token = newToken(user) 
+        // const token = newToken(user) 
         // console.log(user, token);
         res.send({user, token});
-        // return res.render("users/login.ejs",{user});
     } catch(e){
         return res.status(500).send({message:e.message});
     }
