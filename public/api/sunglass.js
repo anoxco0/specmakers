@@ -8037,6 +8037,7 @@
 
 async function sunGlasses(){
     try{
+        let additionFilter="";
        let url = (`https://specmakers.herokuapp.com/products?type=sunglass${additionFilter}`)
        let res = await fetch(url);
 
