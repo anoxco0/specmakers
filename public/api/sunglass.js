@@ -8035,12 +8035,98 @@ let obj =  {
    ]
 }
 
+async function sunGlasses(){
+    try{
+       let url = ("https://specmakers.herokuapp.com/products/")
+       let res = await fetch(url);
 
-let sunglass = [];
-
-for (let i = 0; i < obj.length; i++){
-    console.log()
+       let data = await res.json();
+       console.log(data)
+    }
+    catch(e){
+        console.log(e)
+    }
 }
+sunGlasses();
+
+function sunglass(){
+         com_pro.forEach(function(elements, index){
+            document.getElementById("totalprod").innerText=` Total ${com_pro.length} Products`
+            //  console.log(elements)
+             let mainDiv=document.createElement("div");
+             var img = document.createElement("img");
+             img.src=elements.image_url;
+             
+             let div2 = document.createElement("div");
+             let color= document.createElement("div");
+             let div_col=document.createElement("div");
+             if(elements.color_options.length==[]){
+                div_col.style.backgroundColor=elements.color;
+                color.append(div_col);
+                //  console.log(elements.color)
+             } else{
+                 let col_obj={};
+                 let col=[];
+                 let img_obj=[];
+                 for(let i = 0; i < elements.color_options.length; i++){
+                     
+                     if(col_obj[elements.color_options[i].color]==undefined){
+                         col_obj[elements.color_options[i].color]=1;
+                         col.push(elements.color_options[i].color);
+                         img_obj.push(elements.color_options[i].image_urls);
+                     }
+                    
+                 }
+                 for(let x =0; x <col.length; x++){
+                     let div_col=document.createElement("div");
+                    div_col.style.backgroundColor=col[x]
+                    // console.log(img_obj[x][0])
+                    color.append(div_col);
+                    div_col.addEventListener("click", function(){
+                        img.src=img_obj[x][0];
+                    })
+                 }
+             }
+             let img2 = document.createElement("img");
+             img2.src="https://cdn.shopify.com/s/files/1/0015/2879/1092/files/3dtryon-logo.png?v=1608188856"
+             div2.append(color, img2)
+    
+             let div3 = document.createElement("div");
+             let prname = document.createElement("div");
+             prname.innerText="BLUE ZERO";
+             let price = document.createElement("div");
+             price.innerText = `₹ ${elements.prices[0].price}`
+             div3.append(prname, price);
+    
+             let div4 = document.createElement("div");
+             let model = document.createElement("div");
+             model.innerText=elements.model_name;
+             let discount = document.createElement("div");
+             discount.innerText="Buy 1 Get 1 FREE";
+             div4.append(model, discount);
+    
+             mainDiv.append(img, div2, div3, div4);
+             document.getElementById("dispro").append(mainDiv)
+            img.addEventListener("click", function(){
+                let proarr = [];
+                proarr.push(com_pro[index]);
+                proarr.push(com_pro[index+1]);
+                proarr.push(com_pro[index+2]);
+                proarr.push(com_pro[index+3]);
+                localStorage.setItem("glass", JSON.stringify(proarr));
+                window.location.href="../collections/purchase.html";
+            })
+            img.addEventListener("mouseover", function(){
+                img.src=elements.hover_image_url;
+            })
+            img.addEventListener("mouseout", function(){
+                img.src=elements.image_url;
+            })
+    
+    
+         })
+      }
+      display(com_pro)
 
 // let full_frame = 0;
 // let half_frame=0;
