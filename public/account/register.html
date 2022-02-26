@@ -96,7 +96,7 @@
        }
        else if(datas.user){
            alert("registration Successful remember email and password rediracting to login");
-           localStorage.setItem('user_status', JSON.stringify({datas}));
+           localStorage.setItem('user_status', JSON.stringify(datas));
            window.location.href('../login.html');
        }
         }catch(e){

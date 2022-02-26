@@ -297,24 +297,19 @@
                 email:document.getElementById("Log_email").value,
                 password:document.getElementById("Log_password").value
            };
-       let url = `https://specmakers.herokuapp.com/login`
-       const config = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    }
-       let response = await fetch(url,config);
-       let datas = await response.json();
-       console.log(datas);
+            let url = `https://specmakers.herokuapp.com/login`
+            const config = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+            }
+        let response = await fetch(url,config)
+        console.log(response)
+        let datas = await response.json();
+        console.log(datas);
 
-    //    if(data.error==true){
-    //        alert('regidtration failed')
-    //    }
-    //    else{
-    //        alert('registration successfull')
-    //    }
         }catch(e){
             console.log(e)
         }
