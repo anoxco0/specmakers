@@ -98,7 +98,6 @@
        else if(datas.user){
            document.getElementById('paras').innerHTML="";
            alert("registration Successful remember email and password to login");
-           localStorage.setItem('user_status', JSON.stringify(datas));
            window.location.href='./login.html';
        }
         }catch(e){
