@@ -3,15 +3,13 @@
     margin-left:92%;
     display: flex;
     justify-content: right;
-    /* background-color:red; */
 }
 #cartdone{
     width: 20px;
     height: 20px;
     border-radius: 50%;
     color: white;
-    background-color: black;
-    
+    background-color: black; 
     text-align: center;
 }
 
@@ -23,9 +21,7 @@
     .slideshow-container {
         max-width: 100%;
         position: relative;
-        /* margin: auto; */
     }
-    /* Fading animation */
     .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -350,7 +346,6 @@
         border: transparent;
         font-size: 12px;
         padding: 10px 20px;
-        margin-top: 50px;
+        margin-top: 49px;
     }
-
 }
