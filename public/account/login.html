@@ -309,22 +309,23 @@
         let response = await fetch(url,config)
         let datas = await response.json();
 
-        if(!datas.token){
-        document.getElementById('paras').innerHTML="";
-               const para = document.createElement("p");
-               para.innerText=("! invalid email or password");
-               document.getElementById('paras').append(para);
-               document.getElementById('paras').style.color='red';
-       }  else if(datas.user){
-           let obj ={
-               user_id = datas.user._id,
-               username = datas.user.full_name,
-               email = data.user.email,
-               type = data.user.type
-           }
-       }
-           console.log(obj);
-    //        document.getElementById('paras').innerHTML=null;
+        console.log(datas);
+    //     if(!datas.token){
+    //     document.getElementById('paras').innerHTML="";
+    //            const para = document.createElement("p");
+    //            para.innerText=("! invalid email or password");
+    //            document.getElementById('paras').append(para);
+    //            document.getElementById('paras').style.color='red';
+    //    }  else if(datas.user){
+    //        let obj ={
+    //            user_id = datas.user._id,
+    //            username = datas.user.full_name,
+    //            email = data.user.email,
+    //            type = data.user.type
+    //        }
+    //        console.log(obj);
+           
+    //        document.getElementById('paras').innerHTML="../admin/seller.html";
     //        alert("login successful");
     //        localStorage.setItem('user_status', JSON.stringify(obj));
     //        for(let i = 0; i<obj.type.length; i++)
