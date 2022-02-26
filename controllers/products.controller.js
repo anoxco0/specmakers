@@ -4,8 +4,21 @@ const router = express.Router();
 
 router.get('/', async(req, res)=>{
     try{
-        const product = await Product.find().lean().exec();
+        console.log(req.query)
+        const product = await Product.find(req.query).lean().exec();
         return res.send(product);
+    }
+    catch(e){
+        return res.status(500).send({message:e.message});
+    }
+})
+
+router.get('/', async(req, res)=>{
+    try{
+        console.log(req.query)
+        const product = await Product.find(req.query).lean().exec();
+        // console.log(req.params.glasses)
+        // return res.send(product);
     }
     catch(e){
         return res.status(500).send({message:e.message});
