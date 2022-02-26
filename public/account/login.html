@@ -309,9 +309,6 @@
         let response = await fetch(url,config)
         let datas = await response.json();
 
-        console.log(datas);
-        console.log(datas.token);
-
         if(datas.token!==undefined){
            let obj ={
                user_id : datas.user._id,
@@ -319,7 +316,6 @@
                email : datas.user.email,
                type : datas.user.type
            }
-           console.log(obj);
            
            document.getElementById('paras').innerHTML="../admin/seller.html";
            alert("login successful");
@@ -337,10 +333,9 @@
       else{
         document.getElementById('paras').innerHTML="";
                const para = document.createElement("p");
-               para.innerText=("! invalid email or password");
+               para.innerText="! invalid email or password";
                document.getElementById('paras').append(para);
                document.getElementById('paras').style.color='red';
-               console.log(data.token)
        } 
         }catch(error){
             document.getElementById('paras').innerHTML="";
