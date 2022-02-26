@@ -11,3 +11,5 @@ router.get('/', async(req, res)=>{
         return res.status(500).send({message:e.message});
     }
 })
+
+module.exports=router;

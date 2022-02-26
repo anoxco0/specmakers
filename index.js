@@ -5,6 +5,7 @@ const connect = require('./configs/db');
 const userController = require('./controllers/users.controller');
 const User = require('./models/users.model');
 const {register, login, registeradmin} = require('./controllers/auth.controller');
+const productController = require('./controllers/products.controller');
 const {body, validationResult} = require('express-validator');
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.urlencoded({extended: true }))
 app.use('/register', userController);
 app.use('/login', userController);
 app.use('/users', userController);
+app.use('/products', productController);
 
 app.set('views', path.join(__dirname, 'views'))
 
