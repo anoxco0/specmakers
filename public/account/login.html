@@ -306,10 +306,22 @@
             body: JSON.stringify(data)
             }
         let response = await fetch(url,config)
-        console.log(response)
         let datas = await response.json();
-        console.log(datas);
 
+        if(!datas.token){
+        document.getElementById('paras').innerHTML="";
+
+               const para = document.createElement("p");
+               para.innerText=("! invalid email or password");
+               document.getElementById('paras').append(para);
+               document.getElementById('paras').style.color='red';
+       }
+       else if(datas.user){
+           document.getElementById('paras').innerHTML="";
+           alert("login successful");
+           localStorage.setItem('user_status', JSON.stringify(datas));
+           window.location.href='../index.html';
+       }
         }catch(e){
             console.log(e)
         }
