@@ -313,10 +313,10 @@
 
         if(datas.token){
            let obj ={
-               user_id = datas.user._id,
-               username = datas.user.full_name,
-               email = data.user.email,
-               type = data.user.type
+               user_id : datas.user._id,
+               username : datas.user.full_name,
+               email : data.user.email,
+               type : data.user.type
            }
            console.log(obj);
            
@@ -341,7 +341,10 @@
                document.getElementById('paras').style.color='red';
        } 
         }catch(error){
-            
+            const para = document.createElement("p");
+            para.innerText=("! invalid email or password");
+            document.getElementById('paras').append(para);
+            document.getElementById('paras').style.color='red';
         }
 
      }
