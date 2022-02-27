@@ -69,13 +69,13 @@ function loginPage(){
         if((email=="admin")&&(password=="admin")){
             let user_cred="admin";
             localStorage.setItem("user_status", JSON.stringify(user_cred));
-            window.location.href="../components/admin.html"
+            window.location.href="/admin/seller.html"
         }
       else{
         for (var i in user_cred){
             if((user_cred[i].email=email)&&(user_cred[i].password==password)){
                 localStorage.setItem("user_status", JSON.stringify(user_cred[i]));
-                window.location.href="../index.html";
+                window.location.href="/index.html";
                 alert("Login Successful");
             }
         }
@@ -103,16 +103,14 @@ let logouttrue = document.getElementById("logouttrue");
 logouttrue.addEventListener("click", function(){
     let logout = null;
     localStorage.setItem("user_status", JSON.stringify(logout));
-    window.location.href="../index.html"
+    window.location.href="/index.html"
     alert("logout successfully");
   })
 if(user!=null){
     document.getElementById("nolog").style.display="none";
     document.getElementById("truelog").style.display="block";
-    if(user!="admin"){
         let usernam = document.getElementById("usernam");
-    usernam.innerText=user.name;
-    }
+    usernam.innerText=user.full_name;
     
 } else{
     document.getElementById("nolog").style.display="block";
