@@ -38,11 +38,11 @@ function myAccount(){
     if(user!=null){
          let acc = document.getElementById("nologin");
          acc.style.display="none";
-         
+         console.log(user.username)
          let acc2 = document.getElementById("logintrue");
          acc2.style.display="block";
             let username = document.getElementById("username");
-            username.innerText=user.full_name;
+            username.innerText=user.username;
         
     } else{
         let acc = document.getElementById("nologin");
@@ -149,7 +149,7 @@ if(user!=null){
     document.getElementById("nolog").style.display="none";
     document.getElementById("truelog").style.display="block";
         let usernam = document.getElementById("usernam");
-    usernam.innerText=user.full_name;
+    usernam.innerText=user.username;
     
 } else{
     document.getElementById("nolog").style.display="block";
