@@ -75,7 +75,7 @@
                 password:document.getElementById("password").value
            }
 
-           let url = `https://specmakers.herokuapp.com/register`
+        let url = `https://specmakers.herokuapp.com/register`
        const config = {
         method: 'POST',
         headers: {
@@ -97,7 +97,7 @@
        }
        else if(datas.user){
            document.getElementById('paras').innerHTML="";
-           alert("registration Successful remember email and password to login");
+           alert("registration Successfull !!");
            window.location.href='./login.html';
        }
         }catch(e){

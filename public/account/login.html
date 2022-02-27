@@ -248,7 +248,7 @@
        <input type="email" name="email"  placeholder="Email address" value="" id="Log_email">
        <input type="password" name="password" placeholder="Password"  id="Log_password">
        <div id="paras"></div>
-       <button id="button"  onclick="fun()">Continue</button>
+       <button id="button" onclick="login()">Continue</button>
 
     </div>
     <!-- -----------------------sign in last----------- -->
@@ -292,7 +292,7 @@
 </html>
 <script>
 
-    async function fun(){
+    async function login(){
         try{
             let data={
                 email:document.getElementById("Log_email").value,
@@ -309,36 +309,38 @@
         let response = await fetch(url,config)
         let datas = await response.json();
 
-        if(!datas.token){
-        document.getElementById('paras').innerHTML="";
-
-               const para = document.createElement("p");
-               para.innerText=("! invalid email or password");
-               document.getElementById('paras').append(para);
-               document.getElementById('paras').style.color='red';
-       }
-       else if(datas.user){
+        if(datas.token!==undefined){
            let obj ={
-               user_id = datas.user._id,
-               username = datas.user.full_name,
-               email = data.user.email,
-               type = data.user.type
+               user_id : datas.user._id,
+               username : datas.user.full_name,
+               email : datas.user.email,
+               type : datas.user.type
            }
-           document.getElementById('paras').innerHTML=null;
-           alert("login successful");
+           alert("login successful !!");
            localStorage.setItem('user_status', JSON.stringify(obj));
            for(let i = 0; i<obj.type.length; i++)
-            if(obj.type[i]=="admin") windows.location.href="../admin/seller.html";
+            if(obj.type[i]=="admin") window.location.href="/admin/seller.html";
 
             for(let i = 0; i<obj.type.length; i++)
-            if(obj.type[i]=="seller") windows.location.href="../admin/seller.html";
+            if(obj.type[i]=="seller") window.location.href="/admin/seller.html";
 
             for(i = 0; i<obj.type.length; i++)
             if(obj.type[i]=="customer")  window.location.href='../index.html';
            
        }
-        }catch(e){
-            console.log(e)
+      else{
+        document.getElementById('paras').innerHTML="";
+               const para = document.createElement("p");
+               para.innerText="! invalid email or password";
+               document.getElementById('paras').append(para);
+               document.getElementById('paras').style.color='red';
+       } 
+        }catch(error){
+            document.getElementById('paras').innerHTML="";
+            const para = document.createElement("p");
+            para.innerText=("! invalid email or password");
+            document.getElementById('paras').append(para);
+            document.getElementById('paras').style.color='red';
         }
 
      }
