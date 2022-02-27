@@ -25,13 +25,14 @@ router.get("/:id", async (req,res) =>{
 
 router.patch("/:id", async (req,res) =>{
     try{
-        const user = await User.find().lean().exec();
+        const user = await User.findByIdAndUpdate(req.params.id, req.body,{new:true});
         return res.send(user);
     }
     catch(err){
         return res.status(500).send(err.message);
     }
 })
+
 
 
 module.exports = router;
