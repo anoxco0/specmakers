@@ -318,8 +318,6 @@ let sear = search.value;
            news+=arr[j];
            if(news==sear){
              let showdata = obj.product_list[i];
-            //  console.log(showdata);
-            //  console.log(obj.product_list[i])
              let Div = document.createElement("div");
              let image=document.createElement("img");
              image.src=showdata.image_url;
@@ -329,12 +327,12 @@ let sear = search.value;
              Div.append(image, div1);
              Div.addEventListener("click", function(){
                let proarr = [];
-              //  console.log(showdata)
+             
                proarr.push(showdata);
                proarr.push(obj.product_list[j+1]);
                proarr.push(obj.product_list[j+2]);
                proarr.push(obj.product_list[j+3]);
-              //  console.log(proarr);
+            
                localStorage.setItem("glass", JSON.stringify(proarr));
                window.location.href="../collections/purchase.html";
              })
@@ -343,8 +341,7 @@ let sear = search.value;
              return;
            }
          }
-         
-         findsub(arr, index+1, sear);
+        findsub(arr,index+1,sear)
      }
      
      }
