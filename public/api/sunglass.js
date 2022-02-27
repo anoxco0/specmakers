@@ -8074,7 +8074,7 @@ function sunglass(data){
                      if(col_obj[elements.color_options[i].color]==undefined){
                          col_obj[elements.color_options[i].color]=1;
                          col.push(elements.color_options[i].color);
-                         img_obj.push(elements.color_options[i].image_urls);
+                         img_obj.push(elements.color_options[i].front_image);
                      }
                     
                  }
@@ -8094,9 +8094,9 @@ function sunglass(data){
     
              let div3 = document.createElement("div");
              let prname = document.createElement("div");
-             prname.innerText="BLUE ZERO";
+             prname.innerText=elements.brand_name;
              let price = document.createElement("div");
-             price.innerText = `₹ ${elements.prices}`
+             price.innerText = `₹ ${elements.price}`
              div3.append(prname, price);
     
              let div4 = document.createElement("div");
@@ -8110,10 +8110,10 @@ function sunglass(data){
              document.getElementById("dispro").append(mainDiv)
             img.addEventListener("click", function(){
                 let proarr = [];
-                proarr.push(com_pro[index]);
-                proarr.push(com_pro[index+1]);
-                proarr.push(com_pro[index+2]);
-                proarr.push(com_pro[index+3]);
+                proarr.push(data[index]);
+                proarr.push(data[index+1]);
+                proarr.push(data[index+2]);
+                proarr.push(data[index+3]);
                 localStorage.setItem("glass", JSON.stringify(proarr));
                 window.location.href="../collections/purchase.html";
             })
@@ -8121,7 +8121,7 @@ function sunglass(data){
                 img.src=elements.color_options[0].side_image;
             })
             img.addEventListener("mouseout", function(){
-                img.src=elements.image_url;
+                img.src=elements.color_options[0].front_image;
             })
     
     
