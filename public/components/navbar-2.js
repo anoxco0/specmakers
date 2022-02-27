@@ -24,13 +24,13 @@ function compGlass(){
     }
 }
 function myAccount(){
-    let user = JSON.parse(localStorage.getItem("cur_user"));
+    let user = JSON.parse(localStorage.getItem("user_status"));
     console.log(user)
     let logoutbtn = document.getElementById("logoutbtn");
     logoutbtn.addEventListener("click", function(){
       let logout = null;
-      localStorage.setItem("cur_user", JSON.stringify(logout));
-      window.location.href="../index.html"
+      localStorage.setItem("user_status", JSON.stringify(logout));
+      window.location.href="/index.html"
       alert("logout successfully");
     })
     let account = document.getElementById("main_account");
@@ -41,9 +41,9 @@ function myAccount(){
          
          let acc2 = document.getElementById("logintrue");
          acc2.style.display="block";
-         if(user!="admin"){
+         if(user.type[0]!="admin"){
             let username = document.getElementById("username");
-            username.innerText=user.name;
+            username.innerText=user.full_name;
          }
         
     } else{
@@ -68,13 +68,13 @@ function loginPage(){
     } else{
         if((email=="admin")&&(password=="admin")){
             let user_cred="admin";
-            localStorage.setItem("cur_user", JSON.stringify(user_cred));
+            localStorage.setItem("user_status", JSON.stringify(user_cred));
             window.location.href="../components/admin.html"
         }
       else{
         for (var i in user_cred){
             if((user_cred[i].email=email)&&(user_cred[i].password==password)){
-                localStorage.setItem("cur_user", JSON.stringify(user_cred[i]));
+                localStorage.setItem("user_status", JSON.stringify(user_cred[i]));
                 window.location.href="../index.html";
                 alert("Login Successful");
             }
@@ -98,11 +98,11 @@ function revmenu(){
         X.style.transform="translate(-100%, 0)"
     }
     function createlogin(){
-        let user = JSON.parse(localStorage.getItem("cur_user"));
+        let user = JSON.parse(localStorage.getItem("user_status"));
 let logouttrue = document.getElementById("logouttrue");
 logouttrue.addEventListener("click", function(){
     let logout = null;
-    localStorage.setItem("cur_user", JSON.stringify(logout));
+    localStorage.setItem("user_status", JSON.stringify(logout));
     window.location.href="../index.html"
     alert("logout successfully");
   })
