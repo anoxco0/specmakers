@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News</title>
+    <link rel="stylesheet" href="./styles/main.css">
+  </head>
+
+  <body>
+    <!--DO NOT CHANGE THIS ID's-->
+
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+      </div>
+
+      <div id="main">
+        <div id="headline">
+          <!--add headline here-->
+        </div>
+        <img id="img" src="" alt="" id="img" />
+        <!--show news image here-->
+
+
+        <div id="content">
+          <!--add news content here-->
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module">
+    var news = JSON.parse(localStorage.getItem("news"));
+    console.log(news)
+      var head = document.getElementById("headline");
+      var h2=document.createElement("h2");
+       h2.textContent=news.title;
+       head.append(h2);
+       
+
+
+
+    import sidebar from "./components/sidebar.js";
+    var side=sidebar()
+    console.log(side);
+   
+    let bar = document.querySelector("#sidebar");
+    bar.innerHTML=side;
+    var image=document.getElementById("img");
+    img.src=news.image;
+
+    var cont= document.getElementById("content");
+    var desc=document.createElement("h3");
+    desc.textContent=news.description;
+    var content=document.createElement("h3");
+    content.textContent=news.content;
+    cont.append(desc,content);
+    
+   
+
+    
+  </script>
+</html>
