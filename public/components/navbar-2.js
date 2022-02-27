@@ -148,6 +148,7 @@ logouttrue.addEventListener("click", function(){
 if(user!=null){
     document.getElementById("nolog").style.display="none";
     document.getElementById("truelog").style.display="block";
+    console.log(user.username);
         let usernam = document.getElementById("usernam");
     usernam.innerText=user.username;
     
