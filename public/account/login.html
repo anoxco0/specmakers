@@ -316,13 +316,13 @@
                email : datas.user.email,
                type : datas.user.type
            }
-           alert("login successful");
+           alert("login successful !!");
            localStorage.setItem('user_status', JSON.stringify(obj));
            for(let i = 0; i<obj.type.length; i++)
-            if(obj.type[i]=="admin") window.location.href="../admin/seller.html";
+            if(obj.type[i]=="admin") window.location.href="/admin/seller.html";
 
             for(let i = 0; i<obj.type.length; i++)
-            if(obj.type[i]=="seller") window.location.href="../admin/seller.html";
+            if(obj.type[i]=="seller") window.location.href="/admin/seller.html";
 
             for(i = 0; i<obj.type.length; i++)
             if(obj.type[i]=="customer")  window.location.href='../index.html';

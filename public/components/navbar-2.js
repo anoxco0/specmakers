@@ -41,6 +41,7 @@ function myAccount(){
          console.log(user.username)
          let acc2 = document.getElementById("logintrue");
          acc2.style.display="block";
+         console.log(user.username)
             let username = document.getElementById("username");
             username.innerText=user.username;
         

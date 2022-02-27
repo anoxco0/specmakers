@@ -13,12 +13,23 @@ router.get('/', async(req, res)=>{
     }
 })
 
-router.get('/', async(req, res)=>{
+// router.get('/', async(req, res)=>{
+//     try{
+//         console.log(req.query)
+//         const product = await Product.find(req.query).lean().exec();
+//         // console.log(req.params.glasses)
+//         // return res.send(product);
+//     }
+//     catch(e){
+//         return res.status(500).send({message:e.message});
+//     }
+// })
+
+router.post('/', async(req, res)=>{
     try{
         console.log(req.query)
-        const product = await Product.find(req.query).lean().exec();
-        // console.log(req.params.glasses)
-        // return res.send(product);
+        const product = await Product.create(req.body);
+        return res.send(product);
     }
     catch(e){
         return res.status(500).send({message:e.message});
