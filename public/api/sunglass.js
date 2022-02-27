@@ -8043,6 +8043,7 @@ async function sunGlasses(){
 
        let data = await res.json();
        sunglass(data)
+       filter(data);
     }
     catch(e){
         console.log(e)
@@ -8064,7 +8065,7 @@ function sunglass(data){
              if(elements.color_options.length==[]){
                 div_col.style.backgroundColor=elements.color_options[0].color;
                 color.append(div_col);
-                //  console.log(elements.color)
+                 console.log(elements.color)
              } else{
                  let col_obj={};
                  let col=[];
@@ -8129,272 +8130,275 @@ function sunglass(data){
       }
 
 
-// let full_frame = 0;
-// let half_frame=0;
-// let rimless=0;
-// var fullobj=[];
-// var halfobj=[];
-// var lessobj=[];
-// let rec = 0;
-// let recobj=[];
 
-// let round = 0
-// let roundobj = [];
-
-// let oval = 0;
-// let ovalobj = [];
-
-// let pilot=0;
-// let pilotobj = [];
-
-// let cate = 0;
-// let cateobj = [];
-
-// let hexa=0;
-// let hexaobj = [];
-
-// let black = 0;
-// let blackobj = [];
-
-// let brown = 0;
-// let brownobj = [];
-
-// let blue = 0;
-// let blueobj = [];
-
-// let grey = 0;
-// let greyobj= [];
-
-// let gunmetal = 0;
-// let gunmetalobj=[];
-
-// let golden = 0;
-// let goldenobj=[];
-
-// let silver = 0;
-// let silverobj = [];
-
-// let transparent = 0;
-// let transparentobj=[];
-
-// let green = 0;
-// let greenobj =[];
-
-// let tortoise=0;
-// let tortoiseobj=[];
-
-// let pink = 0;
-// let pinkobj = [];
-
-// let red = 0;
-// let redobj = [];
-
-// let gold = 0;
-// let goldobj = [];
-
-// let purple = 0;
-// let purpleobj = [];
-
-// let maroon = 0;
-// let maroonobj = [];
-
-// let yellow = 0;
-// let yellowobj = [];
-
-// let rosegold=0;
-// let rosegoldobj=[];
-
-// let orange = 0;
-// let orangeobj = [];
-
-// let white = 0;
-// let whiteobj = [];
-
-// let copper = 0;
-// let copperobj = [];
-
-// let large =0;
-// let largeobj = [];
-
-// let medium = 0;
-// let mediumobj = [];
-
-// let small = 0;
-// let smallobj = [];
-//     for(let i = 0; i < obj.product_list.length; i++) {
-//         if(obj.product_list[i].hashtagList[3].name=='Full Rim'){
-//               full_frame++;
-//               fullobj.push(obj.product_list[i]);
-//          } else if(obj.product_list[i].hashtagList[3].name=='Half Rim'){
-//             half_frame++;
-//             halfobj.push(obj.product_list[i]);
-//          } else{
-//             rimless++;
-//             lessobj.push(obj.product_list[i]);
-//          }
-
-//          if(obj.product_list[i].hashtagList[1].name=='Rectangle' ||obj.product_list[i].hashtagList[1].name=='Saquare'||obj.product_list[i].hashtagList[1].name=='Wayfarear'){
-//             rec++;
-//             recobj.push(obj.product_list[i]);
-
-//          } else if(obj.product_list[i].hashtagList[1].name=='Round'){
-//             round++;
-//             roundobj.push(obj.product_list[i]);
-
-//          } else if(obj.product_list[i].hashtagList[1].name=='Geometric'){
-//             oval++;
-//             ovalobj.push(obj.product_list[i]);
-
-//          }
-//          else if(obj.product_list[i].hashtagList[1].name=='Aviator'){
-//             pilot++;
-//             pilotobj.push(obj.product_list[i]);
-
-//          }
-//          else if(obj.product_list[i].hashtagList[1].name=='Cat Eye'){
-//             cate++;
-//             cateobj.push(obj.product_list[i]);
-
-//          }
-//          else if(obj.product_list[i].hashtagList[1].name=='Hexagonal'){
-//             hexa++;
-//             hexaobj.push(obj.product_list[i]);
-
-//          }
-//          if(obj.product_list[i].color=="#000000"){
-//             black++;
-//             blackobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#a52a2a"){
-//             brown++;
-//             brownobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#0000ff"){
-//             blue++;
-//             blueobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#0000ff"){
-//             blue++;
-//             blueobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#808080"){
-//             grey++;
-//             greyobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#b87332"){
-//             gunmetal++;
-//             gunmetalobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#ffd700"){
-//             golden++;
-//             goldenobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#c0c0c0"){
-//             silver++;
-//             silverobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#f1f1f1"){
-//             transparent++;
-//             transparentobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#00ff00"){
-//             green++;
-//             greenobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#ffc0cb"){
-//             pink++;
-//             pinkobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#ff0000"){
-//             red++;
-//             redobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#ffd700"){
-//             gold++;
-//             goldobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#800080"){
-//             purple++;
-//             purpleobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#800000"){
-//             maroon++;
-//             maroonobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#ffff00"){
-//             yellow++;
-//             yellowobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#b76e79"){
-//             rosegold++;
-//             rosegoldobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#ee7600"){
-//             orange++;
-//             orangeobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#b87333"){
-//             white++;
-//             whiteobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].color=="#b87333"){
-//             copper++;
-//             copperobj.push(obj.product_list[i]);
-//          }
-//          else{
-//             tortoise++;
-//             tortoiseobj.push(obj.product_list[i]);
-//          }
-//          if(obj.product_list[i].hashtagList[0].name=='Extra Narrow' || obj.product_list[i].hashtagList[0].name=='Narrow'){
-//             small++;
-//             smallobj.push(obj.product_list[i]);
-//          }
-//          else if(obj.product_list[i].hashtagList[0].name=='Medium'){
-//             medium++;
-//             mediumobj.push(obj.product_list[i]);
-//         }
-//         else if(obj.product_list[i].hashtagList[0].name=='Extra Wide' || obj.product_list[i].hashtagList[0].name=='Wide'){
-//             large++;
-//             largeobj.push(obj.product_list[i]);
-//         }
-         
-         
-//     }
-// document.getElementById("fullframe").innerText=`Full Frame (${full_frame})`
-// document.getElementById("Halfframe").innerText=`Half Frame (${half_frame})`
-// document.getElementById("Rimless").innerText=`Rimless (${rimless})`
-
-// document.getElementById("rec").innerText=`Rectangle (${rec})`
-// document.getElementById("round").innerText=`Round (${round})`
-// document.getElementById("oval").innerText=`Oval (${oval})`
-// document.getElementById("pilot").innerText=`Pilot (${pilot})`
-// document.getElementById("cate").innerText=`Cateye (${cate})`
-// document.getElementById("hexa").innerText=`Hexagon (${hexa})`
-
-// document.getElementById("black").innerText=`Black (${black})`
-// document.getElementById("brown").innerText=`Brown (${brown})`
-// document.getElementById("blue").innerText=`Blue (${blue})`
-// document.getElementById("grey").innerText=`Grey (${grey})`
-// document.getElementById("gunmetal").innerText=`Gunmetal (${gunmetal})`
-// document.getElementById("golden").innerText=`Golden (${golden})`
-// document.getElementById("silver").innerText=`Silver (${silver})`
-// document.getElementById("transparent").innerText=`Transparent (${transparent})`
-// document.getElementById("green").innerText=`Green (${green})`
-// document.getElementById("tortoise").innerText=`Tortoise (${tortoise})`
-// document.getElementById("pink").innerText=`Pink (${pink})`
-// document.getElementById("red").innerText=`Red (${red})`
-// document.getElementById("gold").innerText=`Gold (${gold})`
-// document.getElementById("purple").innerText=`Purple (${purple})`
-// document.getElementById("maroon").innerText=`Maroon (${maroon})`
-// document.getElementById("yellow").innerText=`Yellow (${yellow})`
-// document.getElementById("rosegold").innerText=`Rosegold (${rosegold})`
-// document.getElementById("orange").innerText=`Orange (${orange})`
-// document.getElementById("white").innerText=`White (${white})`
-// document.getElementById("copper").innerText=`Copper (${copper})`
-
-// document.getElementById("small").innerText=`small (${small})`
-// document.getElementById("medium").innerText=`Medium (${medium})`
-// document.getElementById("large").innerText=`Large (${large})`
+      function filter(data){
+        let full_frame = 0;
+        let half_frame=0;
+        let rimless=0;
+        var fullobj=[];
+        var halfobj=[];
+        var lessobj=[];
+        let rec = 0;
+        let recobj=[];
+        
+        let round = 0
+        let roundobj = [];
+        
+        let oval = 0;
+        let ovalobj = [];
+        
+        let pilot=0;
+        let pilotobj = [];
+        
+        let cate = 0;
+        let cateobj = [];
+        
+        let hexa=0;
+        let hexaobj = [];
+        
+        let black = 0;
+        let blackobj = [];
+        
+        let brown = 0;
+        let brownobj = [];
+        
+        let blue = 0;
+        let blueobj = [];
+        
+        let grey = 0;
+        let greyobj= [];
+        
+        let gunmetal = 0;
+        let gunmetalobj=[];
+        
+        let golden = 0;
+        let goldenobj=[];
+        
+        let silver = 0;
+        let silverobj = [];
+        
+        let transparent = 0;
+        let transparentobj=[];
+        
+        let green = 0;
+        let greenobj =[];
+        
+        let tortoise=0;
+        let tortoiseobj=[];
+        
+        let pink = 0;
+        let pinkobj = [];
+        
+        let red = 0;
+        let redobj = [];
+        
+        let gold = 0;
+        let goldobj = [];
+        
+        let purple = 0;
+        let purpleobj = [];
+        
+        let maroon = 0;
+        let maroonobj = [];
+        
+        let yellow = 0;
+        let yellowobj = [];
+        
+        let rosegold=0;
+        let rosegoldobj=[];
+        
+        let orange = 0;
+        let orangeobj = [];
+        
+        let white = 0;
+        let whiteobj = [];
+        
+        let copper = 0;
+        let copperobj = [];
+        
+        let large =0;
+        let largeobj = [];
+        
+        let medium = 0;
+        let mediumobj = [];
+        
+        let small = 0;
+        let smallobj = [];
+            for(let i = 0; i < obj.data.length; i++) {
+                if(data.frame_type=='Full Rim'){
+                      full_frame++;
+                      fullobj.push(data);
+                 } else if(data.frame_type=='Half Rim'){
+                    half_frame++;
+                    halfobj.push(data);
+                 } else{
+                    rimless++;
+                    lessobj.push(data);
+                 }
+        
+                 if(data.frame_shape=='Rectangle' ||data.frame_shape=='Saquare'||data.frame_shape=='Wayfarear'){
+                    rec++;
+                    recobj.push(data);
+        
+                 } else if(data.frame_shape=='Round'){
+                    round++;
+                    roundobj.push(data);
+        
+                 } else if(data.frame_shape=='Geometric'){
+                    oval++;
+                    ovalobj.push(data);
+        
+                 }
+                 else if(data.frame_shape=='Aviator'){
+                    pilot++;
+                    pilotobj.push(data);
+        
+                 }
+                 else if(data.frame_shape=='Cat Eye'){
+                    cate++;
+                    cateobj.push(data);
+        
+                 }
+                 else if(data.frame_shape=='Hexagonal'){
+                    hexa++;
+                    hexaobj.push(data);
+        
+                 }
+                 if(data.color_options[0].color=="#000000"){
+                    black++;
+                    blackobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#a52a2a"){
+                    brown++;
+                    brownobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#0000ff"){
+                    blue++;
+                    blueobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#0000ff"){
+                    blue++;
+                    blueobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#808080"){
+                    grey++;
+                    greyobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#b87332"){
+                    gunmetal++;
+                    gunmetalobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#ffd700"){
+                    golden++;
+                    goldenobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#c0c0c0"){
+                    silver++;
+                    silverobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#f1f1f1"){
+                    transparent++;
+                    transparentobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#00ff00"){
+                    green++;
+                    greenobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#ffc0cb"){
+                    pink++;
+                    pinkobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#ff0000"){
+                    red++;
+                    redobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#ffd700"){
+                    gold++;
+                    goldobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#800080"){
+                    purple++;
+                    purpleobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#800000"){
+                    maroon++;
+                    maroonobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#ffff00"){
+                    yellow++;
+                    yellowobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#b76e79"){
+                    rosegold++;
+                    rosegoldobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#ee7600"){
+                    orange++;
+                    orangeobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#b87333"){
+                    white++;
+                    whiteobj.push(data);
+                 }
+                 else if(data.color_options[0].color=="#b87333"){
+                    copper++;
+                    copperobj.push(data);
+                 }
+                 else{
+                    tortoise++;
+                    tortoiseobj.push(data);
+                 }
+                 if(data.frame_size=='Extra Narrow' || data.frame_size=='Narrow'){
+                    small++;
+                    smallobj.push(data);
+                 }
+                 else if(data.frame_size=='Medium'){
+                    medium++;
+                    mediumobj.push(data);
+                }
+                else if(data.frame_size=='Extra Wide' || data.frame_size=='Wide'){
+                    large++;
+                    largeobj.push(data);
+                }
+                 
+                 
+            }
+        document.getElementById("fullframe").innerText=`Full Frame (${full_frame})`
+        document.getElementById("Halfframe").innerText=`Half Frame (${half_frame})`
+        document.getElementById("Rimless").innerText=`Rimless (${rimless})`
+        
+        document.getElementById("rec").innerText=`Rectangle (${rec})`
+        document.getElementById("round").innerText=`Round (${round})`
+        document.getElementById("oval").innerText=`Oval (${oval})`
+        document.getElementById("pilot").innerText=`Pilot (${pilot})`
+        document.getElementById("cate").innerText=`Cateye (${cate})`
+        document.getElementById("hexa").innerText=`Hexagon (${hexa})`
+        
+        document.getElementById("black").innerText=`Black (${black})`
+        document.getElementById("brown").innerText=`Brown (${brown})`
+        document.getElementById("blue").innerText=`Blue (${blue})`
+        document.getElementById("grey").innerText=`Grey (${grey})`
+        document.getElementById("gunmetal").innerText=`Gunmetal (${gunmetal})`
+        document.getElementById("golden").innerText=`Golden (${golden})`
+        document.getElementById("silver").innerText=`Silver (${silver})`
+        document.getElementById("transparent").innerText=`Transparent (${transparent})`
+        document.getElementById("green").innerText=`Green (${green})`
+        document.getElementById("tortoise").innerText=`Tortoise (${tortoise})`
+        document.getElementById("pink").innerText=`Pink (${pink})`
+        document.getElementById("red").innerText=`Red (${red})`
+        document.getElementById("gold").innerText=`Gold (${gold})`
+        document.getElementById("purple").innerText=`Purple (${purple})`
+        document.getElementById("maroon").innerText=`Maroon (${maroon})`
+        document.getElementById("yellow").innerText=`Yellow (${yellow})`
+        document.getElementById("rosegold").innerText=`Rosegold (${rosegold})`
+        document.getElementById("orange").innerText=`Orange (${orange})`
+        document.getElementById("white").innerText=`White (${white})`
+        document.getElementById("copper").innerText=`Copper (${copper})`
+        
+        document.getElementById("small").innerText=`small (${small})`
+        document.getElementById("medium").innerText=`Medium (${medium})`
+        document.getElementById("large").innerText=`Large (${large})`
+      }
 
 // var com_pro = obj.product_list;
 // console.log(fullobj)
