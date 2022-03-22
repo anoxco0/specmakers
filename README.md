@@ -1,6 +1,6 @@
-#SPecmaket Clone
+# Specmakers Clone
 <br>
-##A clone of an e-commerce web application of eyeglasses and contact lenses
+## A clone of web application of Specmakers
 <br>
 <strong>##ScreenShot</strong>
 <br>
