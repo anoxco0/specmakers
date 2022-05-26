@@ -3,8 +3,6 @@ const {body, validationResult} = require('express-validator');
 
 const jwt = require('jsonwebtoken');
 const User = require('../models/users.model');
-const path = require('path');
-const { toPath } = require('lodash');
 const newToken = (user)=>{
     return jwt.sign({user}, "shhhhh");
 }
@@ -20,7 +18,6 @@ const login= async(req, res)=>{
         const match = user.checkPassword(req.body.password);
         if(!match) {
             error = 'invalid username or password!'
-            // return res.render("users/login.ejs",{error})
             return res.send(error)
         } 
         const token = newToken(user);
