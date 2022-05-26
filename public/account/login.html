@@ -317,7 +317,7 @@
                email : datas.user.email,
                type : datas.user.type
            }
-           alert("login successful !!");
+           alert("login successful!");
            localStorage.setItem('user_status', JSON.stringify(obj));
            for(let i = 0; i<obj.type.length; i++)
             if(obj.type[i]=="admin") window.location.href="/admin/seller.html";
@@ -332,14 +332,14 @@
       else{
         document.getElementById('paras').innerHTML="";
                const para = document.createElement("p");
-               para.innerText="! invalid email or password";
+               para.innerText="invalid email or password!";
                document.getElementById('paras').append(para);
                document.getElementById('paras').style.color='red';
        } 
         }catch(error){
             document.getElementById('paras').innerHTML="";
             const para = document.createElement("p");
-            para.innerText=("! invalid email or password");
+            para.innerText=("invalid email or password !");
             document.getElementById('paras').append(para);
             document.getElementById('paras').style.color='red';
         }

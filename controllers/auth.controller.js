@@ -13,14 +13,13 @@ const login= async(req, res)=>{
     try{
         const user = await User.findOne({email:req.body.email});
         if(!user) {
-            error = 'invalid username or password'
-            // return res.render("users/login.ejs",{error})
+            error = 'invalid username or password!'
             return res.send(error)
         } 
         
         const match = user.checkPassword(req.body.password);
         if(!match) {
-            error = 'invalid username or password'
+            error = 'invalid username or password!'
             // return res.render("users/login.ejs",{error})
             return res.send(error)
         } 
@@ -47,7 +46,6 @@ const register = async(req, res)=>{
         })
         const user = await User.findOne({email:req.body.email}).lean().exec();
         const token = newToken(user) 
-        // console.log(user, token);
         res.send({user, token});
     } catch(e){
         return res.status(500).send({message:e.message});
@@ -64,7 +62,6 @@ const registeradmin = async(req, res)=>{
         const user = await User.findOne({email:req.body.email}).lean().exec();
         const token = newToken(user) 
         return res.send(user);
-        // return res.render("users/login.ejs",{user});
     } catch(e){
         return res.status(500).send({message:e.message});
     }

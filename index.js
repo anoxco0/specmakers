@@ -29,7 +29,7 @@ body('full_name').isLength({min:5, max:15}).withMessage("name should be betweeen
 body("email").isEmail().withMessage('eamil should a valid email address').bail()
 .custom(async(value)=>{
     const user = await User.findOne({email:value});
-    if(user) throw new Error('email already exists')
+    if(user) throw new Error('email already exists!')
     return true;
 }),
 
@@ -38,15 +38,15 @@ body('password').isStrongPassword()
  register);
 
  app.post('/adminanoxco0', 
-body('full_name').isLength({min:5, max:15}).withMessage("name should be betweeen 3 to 15 characters"),
-body("email").isEmail().withMessage('eamil should a valid email address').bail()
+body('full_name').isLength({min:3}).withMessage("name should be greater than 2 characters!"),
+body("email").isEmail().withMessage('eamil should be a valid email address!').bail()
 .custom(async(value)=>{
     const user = await User.findOne({email:value});
-    if(user) throw new Error('email already exists')
+    if(user) throw new Error('email already exists!')
     return true;
 }),
 body('password').isStrongPassword()
-.withMessage('try strong password that have a combination of upercase alphabet, lowercase alphabet, special characters, number and must be greaer than 8 character'),
+.withMessage('try strong password that have a combination of upercase alphabet, lowercase alphabet, special characters, number and must be greaer than 8 character!'),
  registeradmin);
 
 app.post('/login', login)
