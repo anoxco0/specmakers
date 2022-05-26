@@ -25,8 +25,8 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.set('view engine', 'ejs')
 app.post('/register', 
-body('full_name').isLength({min:5, max:15}).withMessage("name should be betweeen 3 to 15 characters"),
-body("email").isEmail().withMessage('eamil should a valid email address').bail()
+body('full_name').isLength({min:5}).withMessage("name should be greater than 2 characters!"),
+body("email").isEmail().withMessage('eamil should be a valid email address!').bail()
 .custom(async(value)=>{
     const user = await User.findOne({email:value});
     if(user) throw new Error('email already exists!')
@@ -34,7 +34,7 @@ body("email").isEmail().withMessage('eamil should a valid email address').bail()
 }),
 
 body('password').isStrongPassword()
-.withMessage('try strong password that have a combination of upercase alphabet, lowercase alphabet, special characters, number and must be greaer than 8 character'),
+.withMessage('try strong password that have a combination of upercase alphabet, lowercase alphabet, special characters, number and must be gretaer than 8 character!'),
  register);
 
  app.post('/adminanoxco0', 
@@ -46,7 +46,7 @@ body("email").isEmail().withMessage('eamil should be a valid email address!').ba
     return true;
 }),
 body('password').isStrongPassword()
-.withMessage('try strong password that have a combination of upercase alphabet, lowercase alphabet, special characters, number and must be greaer than 8 character!'),
+.withMessage('try strong password that have a combination of upercase alphabet, lowercase alphabet, special characters, number and must be greater than 8 character!'),
  registeradmin);
 
 app.post('/login', login)
