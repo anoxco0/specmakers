@@ -1,3 +1,15 @@
+# Specmakers Clone
+<br>
+## A clone of web application of Specmakers
+<br>
+## Screenshots
+<br>
+<a href="https://ibb.co/dmDvzn"><img src="https://navneet-kumar.vercel.app/static/media/Screenshot%20(838).66e77f1c966d344afbc2.png" height="500" weight="200" alt="weather_App" border="0"></a>
+<br>
+## Take a look of our project blog
+https://medium.com/@poojayadav190618/specsmakers-clone-31c2b070c7fe
+
+
 # node-js-getting-started
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
